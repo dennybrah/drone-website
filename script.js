@@ -61,20 +61,15 @@ if (contactForm) {
     // Email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Phone validation regex (flexible format)
-    const phoneRegex = /^[\d\s\-\(\)]+$/;
-
     // Form field elements
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
     const serviceSelect = document.getElementById('service');
     const projectTextarea = document.getElementById('project');
 
     // Error message elements
     const nameError = document.getElementById('nameError');
     const emailError = document.getElementById('emailError');
-    const phoneError = document.getElementById('phoneError');
     const serviceError = document.getElementById('serviceError');
     const projectError = document.getElementById('projectError');
 
@@ -116,20 +111,6 @@ if (contactForm) {
         }
     }
 
-    function validatePhone() {
-        const value = phoneInput.value.trim();
-        // Phone is optional, so only validate if not empty
-        if (value !== '' && !phoneRegex.test(value)) {
-            phoneError.textContent = 'Please enter a valid phone number';
-            phoneInput.style.borderColor = 'var(--error-color)';
-            return false;
-        } else {
-            phoneError.textContent = '';
-            phoneInput.style.borderColor = 'var(--border-color)';
-            return true;
-        }
-    }
-
     function validateService() {
         const value = serviceSelect.value;
         if (value === '') {
@@ -163,7 +144,6 @@ if (contactForm) {
     // Real-time validation
     if (nameInput) nameInput.addEventListener('blur', validateName);
     if (emailInput) emailInput.addEventListener('blur', validateEmail);
-    if (phoneInput) phoneInput.addEventListener('blur', validatePhone);
     if (serviceSelect) serviceSelect.addEventListener('change', validateService);
     if (projectTextarea) projectTextarea.addEventListener('blur', validateProject);
 
@@ -174,63 +154,13 @@ if (contactForm) {
         // Validate all fields
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
-        const isPhoneValid = validatePhone();
         const isServiceValid = validateService();
         const isProjectValid = validateProject();
 
         // Check if all validations passed
-        if (isNameValid && isEmailValid && isPhoneValid && isServiceValid && isProjectValid) {
-            // Get form data
-            const formData = {
-                name: nameInput.value.trim(),
-                email: emailInput.value.trim(),
-                phone: phoneInput.value.trim(),
-                service: serviceSelect.value,
-                project: projectTextarea.value.trim(),
-                budget: document.getElementById('budget').value
-            };
-
-            // Log form data (in production, this would be sent to a server)
-            console.log('Form submitted with data:', formData);
-
-            // Show success message
-            formSuccess.style.display = 'block';
-
-            // Reset form
-            contactForm.reset();
-
-            // Hide success message after 5 seconds
-            setTimeout(function() {
-                formSuccess.style.display = 'none';
-            }, 5000);
-
-            // Scroll to success message
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            // In a real application, you would send this data to your server
-            // Example using fetch:
-            /*
-            fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    formSuccess.style.display = 'block';
-                    contactForm.reset();
-                } else {
-                    alert('There was an error submitting the form. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting the form. Please try again.');
-            });
-            */
+        if (isNameValid && isEmailValid && isServiceValid && isProjectValid) {
+            // Allow form to submit to Formspree
+            contactForm.submit();
         } else {
             // Scroll to first error
             const firstError = document.querySelector('.error-message:not(:empty)');
