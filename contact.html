@@ -50,7 +50,9 @@
                 <!-- Contact Form -->
                 <div class="contact-form-container">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form id="contactForm" class="contact-form" name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact" />
+
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -70,7 +72,6 @@
                                 <option value="photography">Aerial Photography</option>
                                 <option value="videography">Aerial Videography</option>
                                 <option value="inspections">Inspections</option>
-                                <option value="mapping">Mapping & Surveying</option>
                                 <option value="other">Other</option>
                             </select>
                             <span class="error-message" id="serviceError"></span>

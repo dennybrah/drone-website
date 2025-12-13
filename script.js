@@ -159,7 +159,7 @@ if (contactForm) {
 
         // Check if all validations passed
         if (isNameValid && isEmailValid && isServiceValid && isProjectValid) {
-            // Allow form to submit to Formspree
+            // Allow form to submit to Netlify
             contactForm.submit();
         } else {
             // Scroll to first error

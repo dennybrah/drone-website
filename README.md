@@ -23,42 +23,62 @@ A modern, professional website for drone services featuring aerial photography, 
 
 Simply open `index.html` in your web browser to view the website locally.
 
-### 2. Contact Form Setup (Formspree)
+### 2. Contact Form Setup (Netlify Forms)
 
-The contact form is configured to send emails to `denis@lvlogicmedia.com` using Formspree. Follow these steps to activate it:
+The contact form is configured to use Netlify Forms, which automatically handles form submissions when deployed to Netlify.
 
-1. **Create a Formspree Account**
-   - Go to [https://formspree.io](https://formspree.io)
-   - Sign up for a free account
+**How it works:**
+- The form has `data-netlify="true"` attribute which tells Netlify to handle submissions
+- Netlify will automatically detect the form when you deploy
+- Form submissions will appear in your Netlify dashboard under "Forms"
+- You can configure email notifications in the Netlify dashboard
 
-2. **Create a New Form**
-   - Click "New Form" in your Formspree dashboard
-   - Name your form (e.g., "Drone Website Contact")
-   - Set the email address to: `denis@lvlogicmedia.com`
+**Setup Steps:**
 
-3. **Get Your Form ID**
-   - After creating the form, Formspree will give you a Form ID
-   - It will look like: `YOUR_FORM_ID` (a random string of characters)
+1. **Deploy to Netlify** (see Deploying to Netlify section below)
 
-4. **Update the Contact Form**
-   - Open `contact.html` in a text editor
-   - Find this line (around line 53):
-     ```html
-     <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-     ```
-   - Replace `YOUR_FORM_ID` with your actual Formspree Form ID
-   - Example:
-     ```html
-     <form id="contactForm" class="contact-form" action="https://formspree.io/f/xabcdefg" method="POST">
-     ```
+2. **Configure Email Notifications**
+   - Log in to your Netlify dashboard
+   - Go to your site's settings
+   - Navigate to Forms → Form notifications
+   - Add an email notification to send submissions to `denis@lvlogicmedia.com`
+   - You can also set up Slack notifications, webhooks, or other integrations
 
-5. **Save and Test**
-   - Save the file
-   - Upload your website to your hosting provider
-   - Test the contact form by submitting a message
-   - You should receive an email at denis@lvlogicmedia.com
+3. **Test the Form**
+   - Submit a test message through the contact form on your live site
+   - Check your Netlify dashboard under "Forms" to see the submission
+   - Verify you receive the email notification
 
-### 3. Deploying to GitHub Pages
+**Features:**
+- Spam filtering included automatically
+- 100 free submissions per month on the free plan
+- All submissions stored in Netlify dashboard
+- Can export submissions as CSV
+
+### 3. Deploying to Netlify
+
+The easiest way to deploy this website with full contact form functionality:
+
+1. **Push your code to GitHub** (already done)
+
+2. **Connect to Netlify**
+   - Go to [https://www.netlify.com](https://www.netlify.com)
+   - Sign up or log in
+   - Click "Add new site" → "Import an existing project"
+   - Choose GitHub and authorize Netlify
+   - Select your `drone-website` repository
+
+3. **Configure Build Settings**
+   - Build command: (leave empty - this is a static site)
+   - Publish directory: `/` (root directory)
+   - Click "Deploy site"
+
+4. **Your Site is Live!**
+   - Netlify will provide a URL like `https://yoursite.netlify.app`
+   - The contact form will work automatically
+   - You can add a custom domain in Site settings
+
+### 4. Deploying to GitHub Pages (Alternative)
 
 To host your website for free on GitHub Pages:
 
@@ -71,7 +91,9 @@ To host your website for free on GitHub Pages:
    - Your website will be available at: `https://dennybrah.github.io/drone-website/`
    - It may take a few minutes for the site to become available
 
-### 4. Custom Domain (Optional)
+**Note:** GitHub Pages does not support Netlify Forms. If you deploy to GitHub Pages, the contact form will not work. For full functionality including the contact form, deploy to Netlify instead.
+
+### 5. Custom Domain (Optional)
 
 To use a custom domain with GitHub Pages:
 
@@ -96,7 +118,7 @@ drone-website/
 - **HTML5**: Semantic markup and SEO optimization
 - **CSS3**: Modern styling with CSS Grid and Flexbox
 - **JavaScript**: Form validation and interactive features
-- **Formspree**: Contact form email delivery service
+- **Netlify Forms**: Contact form submission handling with built-in spam protection
 
 ## Customization
 
