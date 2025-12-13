@@ -1,6 +1,6 @@
 # LV Logic Media Website
 
-A modern, professional website for drone services featuring aerial photography, videography, and inspections.
+A modern, professional website for drone services in Las Vegas featuring aerial photography, videography, and inspections.
 
 ## Features
 
