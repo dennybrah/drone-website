@@ -1,6 +1,6 @@
-# SkyView Drones Website
+# LV Logic Media Website
 
-A modern, professional website for drone services featuring aerial photography, videography, inspections, and mapping services.
+A modern, professional website for drone services featuring aerial photography, videography, and inspections.
 
 ## Features
 
@@ -9,12 +9,12 @@ A modern, professional website for drone services featuring aerial photography, 
 - **Portfolio Section**: YouTube video showcase of drone footage
 - **Contact Form**: Integrated contact form with email delivery
 - **SEO Optimized**: Meta tags and semantic HTML for better search engine visibility
-- **Services Pages**: Detailed information about all drone services offered
+- **Services Pages**: Detailed information about drone services offered
 
 ## Pages
 
-- **Home** (`index.html`): Main landing page with hero section, features, portfolio video, and services preview
-- **Services** (`services.html`): Detailed breakdown of all services offered
+- **Home** (`index.html`): Main landing page with hero section, features, portfolio video showcasing aerial cinematography, and services preview
+- **Services** (`services.html`): Detailed breakdown of aerial photography, videography, and inspection services
 - **Contact** (`contact.html`): Contact form and business information
 
 ## Setup Instructions
@@ -102,7 +102,7 @@ drone-website/
 
 ### Updating Content
 
-- **Company Name**: Search for "SkyView Drones" and replace with your business name
+- **Company Name**: LV Logic Media
 - **Colors**: Edit CSS variables in `styles.css` (lines 10-25) to change the color scheme
 - **Services**: Modify the services sections in `index.html` and `services.html`
 - **Portfolio Video**: Replace the YouTube video ID in `index.html` (line 91)
@@ -125,4 +125,4 @@ For issues or questions about the website, contact denis@lvlogicmedia.com
 
 ## License
 
-Copyright © 2025 SkyView Drones. All rights reserved.
+Copyright © 2025 LV Logic Media. All rights reserved.
