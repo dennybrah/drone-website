@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact SkyView Drones for a free consultation and quote. Professional drone services for aerial photography, inspections, and mapping.">
+    <meta name="keywords" content="contact drone services, drone quote, aerial photography contact, drone services inquiry">
+    <meta name="author" content="Drone Services Pro">
+    <meta property="og:title" content="Contact Us | SkyView Drones">
+    <meta property="og:description" content="Get in touch with our team for a free consultation and custom quote for your drone service needs.">
+    <meta property="og:type" content="website">
+    <title>Contact Us | SkyView Drones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🚁</span>
+                    <span class="logo-text">SkyView Drones</span>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Ready to take your project to new heights? Contact us for a free consultation</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="photography">Aerial Photography</option>
+                                <option value="videography">Aerial Videography</option>
+                                <option value="inspections">Inspections</option>
+                                <option value="mapping">Mapping & Surveying</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="serviceError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project">Project Details *</label>
+                            <textarea id="project" name="project" rows="5" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+                            <span class="error-message" id="projectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Estimated Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-500">Under $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2500">$1,000 - $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="over-5000">Over $5,000</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+
+                        <div id="formSuccess" class="success-message" style="display: none;">
+                            <p>Thank you for your message! We'll get back to you within 24 hours.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@skyviewdrones.com">info@skyviewdrones.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Service Area</h3>
+                            <p>We serve the entire metropolitan area and surrounding regions within 100 miles</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-features">
+                        <h3>What to Expect</h3>
+                        <ul>
+                            <li>✓ Response within 24 hours</li>
+                            <li>✓ Free initial consultation</li>
+                            <li>✓ Custom quote for your project</li>
+                            <li>✓ Flexible scheduling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How much do your services cost?</h3>
+                    <p>Pricing varies based on project scope, location, and deliverables. Contact us for a custom quote tailored to your specific needs.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are you licensed and insured?</h3>
+                    <p>Yes, all our pilots are FAA Part 107 certified and we carry full liability insurance for all operations.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's the typical turnaround time?</h3>
+                    <p>Most projects are delivered within 48-72 hours after the shoot. Rush delivery options are available for urgent projects.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you travel for projects?</h3>
+                    <p>Yes, we serve the entire metropolitan area and can accommodate projects within 100 miles. Contact us for locations beyond our standard service area.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SkyView Drones</h4>
+                    <p>Professional aerial services you can trust</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@skyviewdrones.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkyView Drones. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
