@@ -295,6 +295,56 @@ ul {
 }
 
 /* ===================================
+   Meet the Pilot Section
+   =================================== */
+.meet-pilot {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+}
+
+.pilot-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.pilot-image {
+    position: relative;
+}
+
+.pilot-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-xl);
+}
+
+.pilot-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.pilot-intro {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.pilot-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.pilot-text .btn {
+    margin-top: 1rem;
+}
+
+/* ===================================
    Portfolio Section
    =================================== */
 .portfolio {
@@ -875,6 +925,19 @@ ul {
     .video-showcase {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .pilot-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .pilot-text h2 {
+        font-size: 2rem;
+    }
+
+    .pilot-intro {
+        font-size: 1.25rem;
     }
 }
 
