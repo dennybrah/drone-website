@@ -129,7 +129,7 @@ ul {
     transform: translateX(-50%) scaleX(0);
     width: 80%;
     height: 2px;
-    background: var(--primary-color);
+    background: #4A8CFF;
     transition: transform 0.3s ease;
 }
 
@@ -197,19 +197,21 @@ ul {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
     color: #ffffff;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .hero-buttons {
@@ -223,7 +225,7 @@ ul {
    =================================== */
 .btn {
     display: inline-block;
-    padding: 0.875rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
     text-align: center;
@@ -234,13 +236,13 @@ ul {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #4A8CFF;
     color: var(--text-primary);
     box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-    background-color: #2d63e0;
+    background-color: #3A7AFE;
     transform: translateY(-2px);
     box-shadow: var(--shadow-glow), var(--shadow-lg);
 }
@@ -266,13 +268,13 @@ ul {
    Sections
    =================================== */
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     color: var(--text-primary);
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
 }
 
 .section-title::after {
@@ -283,7 +285,7 @@ ul {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: var(--primary-color);
+    background: #4A8CFF;
     border-radius: 2px;
 }
 
@@ -297,11 +299,22 @@ ul {
     margin-right: auto;
 }
 
+.section-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
 /* ===================================
    Features Section
    =================================== */
 .features {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: transparent;
 }
 
@@ -330,7 +343,7 @@ ul {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--primary-color);
+    background: #4A8CFF;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -342,7 +355,7 @@ ul {
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--primary-color);
+    border-color: #4A8CFF;
 }
 
 .feature-icon {
@@ -364,14 +377,14 @@ ul {
    Meet the Pilot Section
    =================================== */
 .meet-pilot {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background-color: transparent;
 }
 
 .pilot-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
 }
 
@@ -395,7 +408,7 @@ ul {
 .pilot-intro {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #4A8CFF;
     margin-bottom: 1.5rem;
 }
 
@@ -414,7 +427,7 @@ ul {
    Portfolio Section
    =================================== */
 .portfolio {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: transparent;
 }
 
@@ -523,7 +536,7 @@ ul {
    Services Preview Section
    =================================== */
 .services-preview {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background-color: transparent;
 }
 
@@ -546,7 +559,7 @@ ul {
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--primary-color);
+    border-color: #4A8CFF;
 }
 
 .service-image {
@@ -571,7 +584,7 @@ ul {
 }
 
 .service-link {
-    color: var(--primary-color);
+    color: #4A8CFF;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -586,7 +599,7 @@ ul {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: #4A8CFF;
     transition: width 0.3s ease;
 }
 
@@ -669,7 +682,7 @@ ul {
    Services Detail Section
    =================================== */
 .services-detail {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: transparent;
 }
 
@@ -736,7 +749,7 @@ ul {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: #4A8CFF;
     font-weight: bold;
 }
 
@@ -744,7 +757,7 @@ ul {
    Process Section
    =================================== */
 .process {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background-color: transparent;
 }
 
@@ -795,7 +808,7 @@ ul {
    Contact Section
    =================================== */
 .contact-section {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: transparent;
 }
 
@@ -913,7 +926,7 @@ ul {
 }
 
 .contact-details a {
-    color: var(--primary-color);
+    color: #4A8CFF;
 }
 
 .contact-details a:hover {
@@ -943,7 +956,7 @@ ul {
    FAQ Section
    =================================== */
 .faq-section {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background-color: transparent;
 }
 
@@ -1010,7 +1023,7 @@ ul {
 }
 
 .footer-section a:hover {
-    color: var(--primary-color);
+    color: #4A8CFF;
 }
 
 .footer-bottom {
