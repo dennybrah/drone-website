@@ -157,7 +157,7 @@ ul {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--text-primary);
+    background-color: #FFFFFF;
     transition: var(--transition);
     border-radius: 3px;
 }
