@@ -41,7 +41,7 @@ The contact form is configured to use Netlify Forms, which automatically handles
    - Log in to your Netlify dashboard
    - Go to your site's settings
    - Navigate to Forms → Form notifications
-   - Add an email notification to send submissions to `denis@lvlogicmedia.com`
+   - Add an email notification to send submissions to `denny@lvlogicmedia.com`
    - You can also set up Slack notifications, webhooks, or other integrations
 
 3. **Test the Form**
@@ -143,7 +143,7 @@ To add more videos to the portfolio section, duplicate the video showcase struct
 
 ## Support
 
-For issues or questions about the website, contact denis@lvlogicmedia.com
+For issues or questions about the website, contact denny@lvlogicmedia.com
 
 ## License
 
