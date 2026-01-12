@@ -18,6 +18,7 @@
     --border-color: #2A2D33;
     --success-color: #10b981;
     --error-color: #ef4444;
+    --gradient-primary: linear-gradient(135deg, #3A7AFE 0%, #4A8CFF 50%, #00F0FF 100%);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
@@ -202,7 +203,10 @@ ul {
     margin-bottom: 1.5rem;
     line-height: 1.1;
     color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #ffffff 20%, #4A8CFF 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(58, 122, 254, 0.3);
 }
 
 .hero-subtitle {
@@ -244,7 +248,7 @@ ul {
 .btn-primary:hover {
     background-color: #3A7AFE;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-glow), var(--shadow-lg);
+    box-shadow: 0 0 25px rgba(58, 122, 254, 0.6), var(--shadow-lg);
 }
 
 .btn-secondary {
@@ -285,8 +289,15 @@ ul {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: #4A8CFF;
+    background: var(--gradient-primary);
     border-radius: 2px;
+}
+
+.section-title.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .section-subtitle {
@@ -330,8 +341,10 @@ ul {
     padding: 2rem;
     border-radius: 1rem;
     transition: var(--transition);
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: rgba(26, 29, 35, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
     overflow: hidden;
 }
@@ -439,11 +452,13 @@ ul {
 }
 
 .video-card {
-    background: var(--bg-card);
+    background: rgba(26, 29, 35, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 1rem;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .video-card:hover {
@@ -556,12 +571,14 @@ ul {
 }
 
 .service-card {
-    background: var(--bg-card);
+    background: rgba(26, 29, 35, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .service-card:hover {
