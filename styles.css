@@ -203,9 +203,6 @@ ul {
     margin-bottom: 1.5rem;
     line-height: 1.1;
     color: #ffffff;
-    background: linear-gradient(to right, #ffffff 20%, #4A8CFF 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-shadow: 0 0 30px rgba(58, 122, 254, 0.3);
 }
 
@@ -1249,9 +1246,6 @@ ul {
 
     .hero-title {
         font-size: 2rem;
-        background: none;
-        -webkit-text-fill-color: #ffffff;
-        color: #ffffff;
     }
 
     .hero-subtitle {
