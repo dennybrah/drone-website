@@ -202,7 +202,11 @@ ul {
     font-weight: 800;
     margin-bottom: 1.5rem;
     line-height: 1.1;
-    color: #ffffff;
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
     text-shadow: 0 0 30px rgba(58, 122, 254, 0.3);
 }
 
