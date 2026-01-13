@@ -1249,6 +1249,9 @@ ul {
 
     .hero-title {
         font-size: 2rem;
+        background: none;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
     }
 
     .hero-subtitle {
