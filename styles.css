@@ -1713,21 +1713,42 @@ ul {
     width: 0;
 }
 
-/* Custom Checkbox */
+/* Hide custom checkmark */
 .checkmark {
-    height: 24px;
-    width: 24px;
-    flex-shrink: 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: none;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(26, 29, 35, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    cursor: pointer;
     transition: var(--transition);
+    user-select: none;
+    position: relative;
+    height: 100%;
 }
 
 .checkbox-item:hover {
     background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(74, 140, 255, 0.5);
+}
+
+/* Highlight selected item */
+.checkbox-item:has(input:checked) {
     border-color: #4A8CFF;
+    background: rgba(74, 140, 255, 0.15);
+    box-shadow: 0 0 15px rgba(74, 140, 255, 0.2);
+}
+
+.checkbox-item input:checked~.label-text {
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .checkbox-item input:checked~.checkmark {
