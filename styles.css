@@ -297,6 +297,7 @@ ul {
 .section-title.gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
 }
@@ -1656,36 +1657,113 @@ ul {
     margin-bottom: 2.5rem;
 }
 
+
+/* Booking Form & Checkboxes */
 .booking-form {
-    max-width: 500px;
+    max-width: 800px;
+    /* Wider for grid */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
-.service-dropdown {
+.service-selection {
     width: 100%;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
+    text-align: left;
+}
+
+.form-label {
+    display: block;
     font-size: 1.1rem;
-    outline: none;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(26, 29, 35, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+    position: relative;
+}
+
+/* Hide default checkbox */
+.checkbox-item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Custom Checkbox */
+.checkmark {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition);
 }
 
-.service-dropdown:focus {
+.checkbox-item:hover {
+    background: rgba(255, 255, 255, 0.05);
     border-color: #4A8CFF;
-    box-shadow: 0 0 0 2px rgba(74, 140, 255, 0.2);
+}
+
+.checkbox-item input:checked~.checkmark {
+    background-color: #4A8CFF;
+    border-color: #4A8CFF;
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-item input:checked~.checkmark::after {
+    display: block;
+}
+
+.checkbox-item input:checked~.label-text {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.label-text {
+    color: var(--text-secondary);
+    font-size: 1rem;
 }
 
 .booking-btn {
     width: 100%;
     padding: 1rem 3rem;
     font-size: 1.1rem;
+    max-width: 300px;
 }
 
 /* Service Buttons on Services Page */

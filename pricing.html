@@ -247,21 +247,63 @@
                 <h2>Ready to Book?</h2>
                 <p>Select a service below and let's get started.</p>
                 <form class="booking-form" action="/contact" method="get">
-                    <div class="form-group">
-                        <select id="service-select" name="service" class="service-dropdown" required>
-                            <option value="" disabled selected>Select a Service or Package</option>
-                            <option value="Base Package">BASE Package - $245</option>
-                            <option value="Pro Package">PRO Package - $425</option>
-                            <option value="Plus Package">PLUS Package - $675</option>
-                            <option value="Luxury Package">LUXURY Package - $1,195</option>
-                            <option disabled>--- À La Carte ---</option>
-                            <option value="MLS Photos">MLS Photos Only</option>
-                            <option value="Drone Photos">Drone Photos Only</option>
-                            <option value="Twilight Photos">Twilight Photos</option>
-                            <option value="Video Tour">Video Tour</option>
-                            <option value="Vertical Reel">Vertical Social Reel</option>
-                            <option value="Other">Other / Custom</option>
-                        </select>
+                    <div class="form-group service-selection">
+                        <label class="form-label">Select Services (Multiple Allowed):</label>
+                        <div class="checkbox-grid">
+                            <!-- Packages -->
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Base Package">
+                                <span class="checkmark"></span>
+                                <span class="label-text">BASE Package ($245)</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Pro Package">
+                                <span class="checkmark"></span>
+                                <span class="label-text">PRO Package ($425)</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Plus Package">
+                                <span class="checkmark"></span>
+                                <span class="label-text">PLUS Package ($675)</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Luxury Package">
+                                <span class="checkmark"></span>
+                                <span class="label-text">LUXURY Package ($1,195)</span>
+                            </label>
+
+                            <!-- A La Carte -->
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="MLS Photos">
+                                <span class="checkmark"></span>
+                                <span class="label-text">MLS Photos Only</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Drone Photos">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Drone Photos Only</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Twilight Photos">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Twilight Photos</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Video Tour">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Video Tour</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Vertical Reel">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Vertical Social Reel</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="service" value="Other">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Other / Custom</span>
+                            </label>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary booking-btn">Book Now</button>
                 </form>
