@@ -224,3 +224,57 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+
+// ===================================
+// Lightbox Gallery
+// ===================================
+
+function openLightbox() {
+  document.getElementById("lightboxModal").style.display = "block";
+  document.body.style.overflow = "hidden"; // Disable scrolling
+}
+
+function closeLightbox() {
+  document.getElementById("lightboxModal").style.display = "none";
+  document.body.style.overflow = "auto"; // Enable scrolling
+}
+
+let slideIndex = 1;
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    slides[i].style.removeProperty("display"); // Clean up inline styles
+    slides[i].classList.remove("active-slide"); // Use class for state if needed, but display:flex is used here
+    slides[i].style.display = "none"; 
+  }
+  
+  // MySlides are flexboxes in CSS, so we need to set them to flex, not block
+  slides[slideIndex-1].style.display = "flex";
+}
+
+// Keyboard Navigation
+document.addEventListener('keydown', function(event) {
+    if (document.getElementById("lightboxModal").style.display === "block") {
+        if (event.key === "Escape") {
+            closeLightbox();
+        } else if (event.key === "ArrowLeft") {
+            plusSlides(-1);
+        } else if (event.key === "ArrowRight") {
+            plusSlides(1);
+        }
+    }
+});
+
