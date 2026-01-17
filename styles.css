@@ -1788,6 +1788,31 @@ ul {
     padding: 1rem 3rem;
     font-size: 1.1rem;
     max-width: 300px;
+    background-color: var(--success-color);
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4);
+}
+
+.booking-btn:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.6), var(--shadow-lg);
+}
+
+.pkg-savings {
+    font-size: 0.85rem;
+    color: var(--success-color);
+    margin-top: 0.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    font-weight: 400;
 }
 
 /* Service Buttons on Services Page */
