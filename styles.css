@@ -1844,10 +1844,18 @@ ul {
 .gallery-wrapper h3 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    /* Slightly smaller to fit "Southern Highlands..." */
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: 0.5px;
+    line-height: 1.3;
+    min-height: 3.5rem;
+    /* Enforce height alignment so grid tops align evenly */
+    display: flex;
+    align-items: flex-end;
+    /* Align text to bottom of header area */
+    justify-content: center;
 }
 
 
@@ -1861,10 +1869,6 @@ ul {
     .video-middle {
         width: 100%;
         max-width: 100% !important;
-    }
-
-    .video-middle h3 {
-        display: none;
     }
 }
 
