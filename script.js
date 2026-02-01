@@ -190,7 +190,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Add fade-in animation to elements
 document.addEventListener('DOMContentLoaded', function() {
-    const animateElements = document.querySelectorAll('.feature-card, .service-card, .process-step, .faq-item, .service-detail');
+    const animateElements = document.querySelectorAll('.feature-card, .service-card, .process-step, .faq-item, .service-detail, .gallery-container');
 
     animateElements.forEach(element => {
         element.style.opacity = '0';
@@ -225,56 +225,138 @@ window.addEventListener('scroll', function() {
     });
 });
 
+
 // ===================================
-// Lightbox Gallery
+// Class-Based Gallery Implementation
 // ===================================
 
-function openLightbox() {
-  document.getElementById("lightboxModal").style.display = "block";
-  document.body.style.overflow = "hidden"; // Disable scrolling
-}
+class Gallery {
+    constructor(containerId, imagesFolder, imageList) {
+        this.container = document.getElementById(containerId);
+        this.imagesFolder = imagesFolder;
+        this.imageList = imageList; // Array of filenames
+        this.currentIndex = 0;
+        
+        if (!this.container) return; // Guard clause if element doesn't exist
 
-function closeLightbox() {
-  document.getElementById("lightboxModal").style.display = "none";
-  document.body.style.overflow = "auto"; // Enable scrolling
-}
+        this.init();
+    }
 
-let slideIndex = 1;
+    init() {
+        this.renderCarousel();
+        this.setupLightbox();
+        this.addEventListeners();
+    }
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+    renderCarousel() {
+        // Create HTML structure for the carousel
+        let html = '';
+        
+        // Navigation Buttons
+        html += `<a class="gallery-btn-prev" onclick="gallery_${this.container.id}.moveSlide(-1)">&#10094;</a>`;
+        html += `<a class="gallery-btn-next" onclick="gallery_${this.container.id}.moveSlide(1)">&#10095;</a>`;
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+        // Slides
+        this.imageList.forEach((imgName, index) => {
+            const displayStyle = index === 0 ? 'block' : 'none';
+            const activeClass = index === 0 ? 'active' : '';
+            html += `
+                <div class="gallery-slide ${activeClass}" style="display: ${displayStyle}" onclick="gallery_${this.container.id}.openLightbox(${index})">
+                    <img src="${this.imagesFolder}/${imgName}" style="width:100%; object-fit: cover; aspect-ratio: 4/3;">
+                    <div class="gallery-counter">${index + 1} / ${this.imageList.length}</div>
+                </div>
+            `;
+        });
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    slides[i].style.removeProperty("display"); // Clean up inline styles
-    slides[i].classList.remove("active-slide"); // Use class for state if needed, but display:flex is used here
-    slides[i].style.display = "none"; 
-  }
-  
-  // MySlides are flexboxes in CSS, so we need to set them to flex, not block
-  slides[slideIndex-1].style.display = "flex";
-}
+        this.container.innerHTML = html;
+        this.slides = this.container.querySelectorAll('.gallery-slide');
+    }
 
-// Keyboard Navigation
-document.addEventListener('keydown', function(event) {
-    if (document.getElementById("lightboxModal").style.display === "block") {
-        if (event.key === "Escape") {
-            closeLightbox();
-        } else if (event.key === "ArrowLeft") {
-            plusSlides(-1);
-        } else if (event.key === "ArrowRight") {
-            plusSlides(1);
+    moveSlide(n) {
+        this.showSlide(this.currentIndex + n);
+    }
+
+    showSlide(n) {
+        // Wrap around
+        if (n >= this.imageList.length) {
+            this.currentIndex = 0;
+        } else if (n < 0) {
+            this.currentIndex = this.imageList.length - 1;
+        } else {
+            this.currentIndex = n;
+        }
+
+        // Hide all
+        this.slides.forEach(slide => {
+            slide.style.display = 'none';
+            slide.classList.remove('active');
+        });
+
+        // Show current
+        this.slides[this.currentIndex].style.display = 'block';
+        this.slides[this.currentIndex].classList.add('active');
+        
+        // Also update lightbox if it's open
+        // (Optional interaction, keeping simple for now)
+    }
+
+    // Lightbox Logic
+    setupLightbox() {
+        // Check if global lightbox exists, if not create it
+        if (!document.getElementById('globalLightbox')) {
+            const lightboxHtml = `
+                <div id="globalLightbox" class="lightbox-modal">
+                    <button class="lightbox-close" onclick="closeGlobalLightbox()">&times;</button>
+                    <a class="lightbox-btn-prev" onclick="activeGalleryInstance.moveLightbox(-1)">&#10094;</a>
+                    <a class="lightbox-btn-next" onclick="activeGalleryInstance.moveLightbox(1)">&#10095;</a>
+                    <div class="lightbox-content-wrapper">
+                        <img id="lightboxImage" class="lightbox-image" src="" alt="Gallery Image">
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', lightboxHtml);
+            
+            // Global Close Function
+            window.closeGlobalLightbox = () => {
+                document.getElementById('globalLightbox').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+
+            // Global Key Events
+            document.addEventListener('keydown', (e) => {
+                if (document.getElementById('globalLightbox').style.display === 'block') {
+                    if (e.key === 'Escape') closeGlobalLightbox();
+                    if (e.key === 'ArrowLeft' && window.activeGalleryInstance) window.activeGalleryInstance.moveLightbox(-1);
+                    if (e.key === 'ArrowRight' && window.activeGalleryInstance) window.activeGalleryInstance.moveLightbox(1);
+                }
+            });
         }
     }
-});
 
+    openLightbox(index) {
+        this.currentIndex = index;
+        window.activeGalleryInstance = this; // Set global active instance
+        
+        const lightbox = document.getElementById('globalLightbox');
+        const img = document.getElementById('lightboxImage');
+        
+        img.src = `${this.imagesFolder}/${this.imageList[this.currentIndex]}`;
+        lightbox.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    moveLightbox(n) {
+        this.moveSlide(n); // Update the carousel behind the scenes too
+        const img = document.getElementById('lightboxImage');
+        // Preload/Swap
+        img.style.opacity = 0;
+        setTimeout(() => {
+            img.src = `${this.imagesFolder}/${this.imageList[this.currentIndex]}`;
+            img.onload = () => { img.style.opacity = 1; };
+        }, 200);
+    }
+    
+    addEventListeners() {
+        // Handled via onclick attributes for simplicity in this generated HTML
+    }
+}

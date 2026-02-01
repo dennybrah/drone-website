@@ -13,7 +13,7 @@
     <meta property="og:description"
         content="Premium real estate photography, video production, and business marketing content in Las Vegas. FAA Part 107 Pilot with 10+ years of experience.">
     <meta property="og:type" content="website">
-    <title>Las Vegas Logic Media | Professional Drone Services</title>
+    <title>Las Vegas Logic Media | Real Estate Media & Video Production</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,7 +87,7 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Capturing Las Vegas from Every Angle: Premium Drone & Video Production</h1>
+                <h1 class="hero-title">Capturing Las Vegas from Every Angle: Premium Media & Video Production</h1>
                 <p class="hero-subtitle">FAA Part 107 Pilot • 10+ Years Post-Production Expert • Local Since 1998</p>
                 <div class="hero-buttons">
                     <a href="/services" class="btn btn-primary">Services</a>
@@ -160,6 +160,18 @@
     <section class="portfolio">
         <div class="container">
             <h2 class="section-title">Work Samples</h2>
+            <div class="portfolio-grid" style="margin-bottom: 30px;">
+                <div style="position:relative; width:100%; height:0px; padding-bottom:56.25%; grid-column: 1 / -1;">
+                    <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/j1hjqc?"
+                        width="100%"
+                        style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
+                </div>
+            </div>
+
+            <!-- Galleries -->
+            <div id="gallery-prop1" class="gallery-container"></div>
+            <div id="gallery-prop2" class="gallery-container"></div>
+
             <div class="portfolio-grid">
                 <div class="video-card">
                     <div class="video-wrapper">
@@ -274,7 +286,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Las Vegas Logic Media</h4>
-                    <p>Drone photo and video in Las Vegas</p>
+                    <p>Real Estate Media & Video Production</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -313,12 +325,34 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Las Vegas Logic Media. All rights reserved.</p>
+                <p>&copy; 2026 Las Vegas Logic Media. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Property 1 Images
+            const prop1Images = Array.from({ length: 19 }, (_, i) => `${i + 1}.jpg`);
+            new Gallery('gallery-prop1', 'images/property 1', prop1Images);
+
+            // Property 2 Images
+            const prop2Images = [
+                '10909_Bramante_1.jpg', '10909_Bramante_2.jpg', '10909_Bramante_3.jpg', '10909_Bramante_4.jpg', '10909_Bramante_5.jpg',
+                '10909_Bramante_6.jpg', '10909_Bramante_7.jpg', '10909_Bramante_8.jpg', '10909_Bramante_9.jpg', '10909_Bramante_10.jpg',
+                '10909_Bramante_11.jpg', '10909_Bramante_12.jpg', '10909_Bramante_13.jpg', '10909_Bramante_14.jpg', '10909_Bramante_15.jpg',
+                '10909_Bramante_16.jpg', '10909_Bramante_17.jpg', '10909_Bramante_18.jpg', '10909_Bramante_19.jpg', '10909_Bramante_20.jpg',
+                '10909_Bramante_21.jpg', '10909_Bramante_22.jpg', '10909_Bramante_23.jpg', '10909_Bramante_24.jpg', '10909_Bramante_25.jpg',
+                '10909_Bramante_26.jpg', '10909_Bramante_27.jpg', '10909_Bramante_28.jpg', '10909_Bramante_29.jpg', '10909_Bramante_30.jpg',
+                '10909_Bramante_31.jpg', '10909_Bramante_32.jpg', '10909_Bramante_33.jpg', '10909_Bramante_34.jpg', '10909_Bramante_35.jpg',
+                '10909_Bramante_36.jpg', '10909_Bramante_37.jpg', '10909_Bramante_38.jpg', '10909_Bramante_39.jpg', '10909_Bramante_40.jpg',
+                '10909_Bramante_41.jpg', '10909_Bramante_42.jpg', '10909_Bramante_43.jpg', '10909_Bramante_44.jpg', '10909_Bramante_45.jpg',
+                '10909_Bramante_46.jpg', '10909_Bramante_47.jpg', '10909_Bramante_48.jpg'
+            ];
+            new Gallery('gallery-prop2', 'images/property 2', prop2Images);
+        });
+    </script>
 </body>
 
 </html>

@@ -1822,3 +1822,179 @@ ul {
 
     /* Make table scrollable primarily, which table-responsive handles */
 }
+
+/* ===================================
+   Gallery/Carousel Styles (New)
+   =================================== */
+.gallery-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    /* Hide slides off-screen */
+}
+
+.gallery-slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Aspect ratio container could be better, but basic image is fine for now */
+}
+
+/* Show one slide by default if active */
+.gallery-slide.active {
+    display: block;
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.gallery-container:hover .gallery-slide {
+    /* transform: scale(1.01); */
+    /* active slide hover effect if desired */
+}
+
+/* On-page Navigation Arrows */
+.gallery-btn-prev,
+.gallery-btn-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 5;
+}
+
+.gallery-btn-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.gallery-btn-prev:hover,
+.gallery-btn-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Gallery Info/Counter */
+.gallery-counter {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-top-left-radius: 5px;
+    pointer-events: none;
+}
+
+/* Lightbox Styles (Refined) */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    /* High z-index */
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* No background scroll */
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.lightbox-content-wrapper {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 85%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    color: #f1f1f1;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 3002;
+    background: transparent;
+    border: none;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #4A8CFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Lightbox Navigation */
+.lightbox-btn-prev,
+.lightbox-btn-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: transparent;
+    z-index: 3001;
+}
+
+.lightbox-btn-next {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.lightbox-btn-prev {
+    left: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+.lightbox-btn-prev:hover,
+.lightbox-btn-next:hover {
+    color: #4A8CFF;
+    background-color: rgba(0, 0, 0, 0.1);
+}
