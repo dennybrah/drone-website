@@ -1826,10 +1826,28 @@ ul {
 /* ===================================
    Gallery/Carousel Styles (New)
    =================================== */
+.galleries-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gallery-wrapper {
+    flex: 1;
+    min-width: 0;
+    /* Prevent overflow */
+}
+
+@media (max-width: 768px) {
+    .galleries-row {
+        flex-direction: column;
+    }
+}
+
 .gallery-container {
     position: relative;
     max-width: 100%;
-    margin: 20px 0;
+    margin: 0;
     overflow: hidden;
     /* Hide slides off-screen */
 }
@@ -1860,10 +1878,7 @@ ul {
     }
 }
 
-.gallery-container:hover .gallery-slide {
-    /* transform: scale(1.01); */
-    /* active slide hover effect if desired */
-}
+
 
 /* On-page Navigation Arrows */
 .gallery-btn-prev,

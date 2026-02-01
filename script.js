@@ -1,12 +1,12 @@
 // ===================================
 // Mobile Menu Toggle
 // ===================================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuToggle.addEventListener('click', function () {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -14,14 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when clicking on a link
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 mobileMenuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const isClickInsideNav = navMenu.contains(event.target);
             const isClickOnToggle = mobileMenuToggle.contains(event.target);
 
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Smooth Scrolling for Anchor Links
 // ===================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href !== '#' && href !== '') {
             e.preventDefault();
@@ -148,7 +148,7 @@ if (contactForm) {
     if (projectTextarea) projectTextarea.addEventListener('blur', validateProject);
 
     // Form submission
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Validate all fields
@@ -179,7 +179,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -189,7 +189,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Add fade-in animation to elements
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const animateElements = document.querySelectorAll('.feature-card, .service-card, .process-step, .faq-item, .service-detail, .gallery-container');
 
     animateElements.forEach(element => {
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===================================
 // Active Navigation Highlighting
 // ===================================
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a');
 
@@ -236,8 +236,14 @@ class Gallery {
         this.imagesFolder = imagesFolder;
         this.imageList = imageList; // Array of filenames
         this.currentIndex = 0;
-        
-        if (!this.container) return; // Guard clause if element doesn't exist
+
+        if (!this.container) return; // Guard clause
+
+        // Create a safe variable name for inline handlers (no dashes)
+        this.safeId = containerId.replace(/-/g, '_');
+
+        // Expose instance for inline onclick handlers
+        window['gallery_' + this.safeId] = this;
 
         this.init();
     }
@@ -251,17 +257,17 @@ class Gallery {
     renderCarousel() {
         // Create HTML structure for the carousel
         let html = '';
-        
+
         // Navigation Buttons
-        html += `<a class="gallery-btn-prev" onclick="gallery_${this.container.id}.moveSlide(-1)">&#10094;</a>`;
-        html += `<a class="gallery-btn-next" onclick="gallery_${this.container.id}.moveSlide(1)">&#10095;</a>`;
+        html += `<a class="gallery-btn-prev" onclick="gallery_${this.safeId}.moveSlide(-1)">&#10094;</a>`;
+        html += `<a class="gallery-btn-next" onclick="gallery_${this.safeId}.moveSlide(1)">&#10095;</a>`;
 
         // Slides
         this.imageList.forEach((imgName, index) => {
             const displayStyle = index === 0 ? 'block' : 'none';
             const activeClass = index === 0 ? 'active' : '';
             html += `
-                <div class="gallery-slide ${activeClass}" style="display: ${displayStyle}" onclick="gallery_${this.container.id}.openLightbox(${index})">
+                <div class="gallery-slide ${activeClass}" style="display: ${displayStyle}" onclick="gallery_${this.safeId}.openLightbox(${index})">
                     <img src="${this.imagesFolder}/${imgName}" style="width:100%; object-fit: cover; aspect-ratio: 4/3;">
                     <div class="gallery-counter">${index + 1} / ${this.imageList.length}</div>
                 </div>
@@ -295,7 +301,7 @@ class Gallery {
         // Show current
         this.slides[this.currentIndex].style.display = 'block';
         this.slides[this.currentIndex].classList.add('active');
-        
+
         // Also update lightbox if it's open
         // (Optional interaction, keeping simple for now)
     }
@@ -315,7 +321,7 @@ class Gallery {
                 </div>
             `;
             document.body.insertAdjacentHTML('beforeend', lightboxHtml);
-            
+
             // Global Close Function
             window.closeGlobalLightbox = () => {
                 document.getElementById('globalLightbox').style.display = 'none';
@@ -336,10 +342,10 @@ class Gallery {
     openLightbox(index) {
         this.currentIndex = index;
         window.activeGalleryInstance = this; // Set global active instance
-        
+
         const lightbox = document.getElementById('globalLightbox');
         const img = document.getElementById('lightboxImage');
-        
+
         img.src = `${this.imagesFolder}/${this.imageList[this.currentIndex]}`;
         lightbox.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -355,7 +361,7 @@ class Gallery {
             img.onload = () => { img.style.opacity = 1; };
         }, 200);
     }
-    
+
     addEventListeners() {
         // Handled via onclick attributes for simplicity in this generated HTML
     }

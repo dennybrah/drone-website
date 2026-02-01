@@ -160,17 +160,26 @@
     <section class="portfolio">
         <div class="container">
             <h2 class="section-title">Work Samples</h2>
-            <div class="portfolio-grid" style="margin-bottom: 30px;">
-                <div style="position:relative; width:100%; height:0px; padding-bottom:56.25%; grid-column: 1 / -1;">
+            <!-- Galleries (Side by Side) -->
+            <div class="galleries-row">
+                <div class="gallery-wrapper">
+                    <h3 style="margin-bottom:10px; font-size: 1.1rem; color: #ddd;">Property 1</h3>
+                    <div id="gallery-prop1" class="gallery-container"></div>
+                </div>
+                <div class="gallery-wrapper">
+                    <h3 style="margin-bottom:10px; font-size: 1.1rem; color: #ddd;">Property 2</h3>
+                    <div id="gallery-prop2" class="gallery-container"></div>
+                </div>
+            </div>
+
+            <!-- Vertical Video (Streamable) -->
+            <div style="max-width: 400px; margin: 40px auto;">
+                <div style="position:relative; width:100%; height:0px; padding-bottom:177.778%;">
                     <iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/j1hjqc?"
                         width="100%"
                         style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe>
                 </div>
             </div>
-
-            <!-- Galleries -->
-            <div id="gallery-prop1" class="gallery-container"></div>
-            <div id="gallery-prop2" class="gallery-container"></div>
 
             <div class="portfolio-grid">
                 <div class="video-card">
