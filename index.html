@@ -360,6 +360,14 @@
                 '10909_Bramante_46.jpg', '10909_Bramante_47.jpg', '10909_Bramante_48.jpg'
             ];
             new Gallery('gallery-prop2', 'images/property 2', prop2Images);
+
+            // Randomize Services Page Real Estate Image
+            const randomImg = document.getElementById('real-estate-random-img');
+            if (randomImg) {
+                // 19 images in property 1
+                const rand = Math.floor(Math.random() * 19) + 1;
+                randomImg.style.backgroundImage = `url('images/property 1/${rand}.jpg')`;
+            }
         });
     </script>
 </body>

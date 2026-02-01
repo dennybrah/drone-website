@@ -76,8 +76,8 @@
                             <a href="/contact" class="btn btn-secondary">Contact</a>
                         </div>
                     </div>
-                    <div class="service-detail-image"
-                        style="background: url('images/real-estate/1.jpg') center/cover no-repeat;"></div>
+                    <div class="service-detail-image" id="real-estate-random-img"
+                        style="background: url('images/property 1/1.jpg') center/cover no-repeat;"></div>
                 </div>
 
                 <!-- Real Estate Gallery & Video Supplement -->
@@ -234,14 +234,16 @@
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Property 1 Images for Services Page (reusing same logic)
-            // Note: Services page seems to use "images/real-estate folder" in original code?
-            // Original code used "images/real-estate/1.jpg".
-            // Property 1 folder has "1.jpg". I should check if they are the same or if I should use "images/property 1"
-            // The user said "I updated the property photos folder and added another so there are two folders now 'property 1' and 'property 2'".
-            // So likely I should use 'images/property 1' here as well.
+            // Property 1 Images for Services Page
             const prop1Images = Array.from({ length: 19 }, (_, i) => `${i + 1}.jpg`);
             new Gallery('service-gallery-prop1', 'images/property 1', prop1Images);
+
+            // Randomize Real Estate Section Image
+            const randomImg = document.getElementById('real-estate-random-img');
+            if (randomImg) {
+                const rand = Math.floor(Math.random() * 19) + 1;
+                randomImg.style.backgroundImage = `url('images/property 1/${rand}.jpg')`;
+            }
         });
     </script>
 </body>
