@@ -376,6 +376,7 @@ class BookingManager {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            console.log('Form submitted!');
 
             // Validate form
             if (!this.validateForm()) {
@@ -385,6 +386,8 @@ class BookingManager {
 
             // Collect form data
             this.collectFormData();
+            console.log('Form data collected:', this.formData);
+            console.log('Payment method:', this.paymentMethod);
 
             // Show loading state
             submitBtn.classList.add('loading');
@@ -392,13 +395,18 @@ class BookingManager {
 
             try {
                 if (this.paymentMethod === 'pay-now') {
+                    console.log('Initiating Stripe checkout...');
                     await this.initiateStripeCheckout();
                 } else if (this.paymentMethod === 'invoice') {
+                    console.log('Sending invoice request...');
                     await this.sendInvoiceRequest();
+                } else {
+                    console.error('Unknown payment method:', this.paymentMethod);
+                    alert('Please select a payment method');
                 }
             } catch (error) {
                 console.error('Submission error:', error);
-                alert('There was an error processing your request. Please try again or contact us directly.');
+                alert('There was an error processing your request. Please try again or contact us directly.\n\nError: ' + error.message);
                 submitBtn.classList.remove('loading');
                 submitBtn.disabled = false;
             }
@@ -449,13 +457,20 @@ class BookingManager {
     // Stripe Checkout Integration
     // ===================================
     async initiateStripeCheckout() {
+        console.log('Checking Stripe...');
+
         // Check if Stripe is loaded
         if (typeof Stripe === 'undefined') {
+            console.error('Stripe not loaded!');
             alert('Payment system not loaded. Please refresh the page and try again.');
-            return;
+            throw new Error('Stripe not loaded');
         }
 
+        console.log('Stripe is loaded');
+
         try {
+            console.log('Creating checkout session...');
+
             // Create checkout session via Netlify Function
             const response = await fetch('/.netlify/functions/create-checkout', {
                 method: 'POST',
@@ -475,22 +490,30 @@ class BookingManager {
                 })
             });
 
+            console.log('Checkout response status:', response.status);
+
             if (!response.ok) {
-                throw new Error('Failed to create checkout session');
+                const errorText = await response.text();
+                console.error('Checkout error response:', errorText);
+                throw new Error(`Failed to create checkout session: ${response.status}`);
             }
 
             const session = await response.json();
+            console.log('Session created:', session);
 
             // Initialize Stripe with your publishable key
             // TODO: Replace with your actual Stripe publishable key
+            console.log('Initializing Stripe with key...');
             const stripe = Stripe('pk_test_YOUR_STRIPE_KEY_HERE');
 
+            console.log('Redirecting to Stripe Checkout...');
             // Redirect to Stripe Checkout
             const result = await stripe.redirectToCheckout({
                 sessionId: session.id
             });
 
             if (result.error) {
+                console.error('Stripe redirect error:', result.error);
                 throw new Error(result.error.message);
             }
 
@@ -504,6 +527,7 @@ class BookingManager {
     // Invoice Request Submission
     // ===================================
     async sendInvoiceRequest() {
+        console.log('Creating invoice form submission...');
         const formData = new FormData();
         formData.append('form-name', 'booking-invoice');
 
@@ -527,20 +551,30 @@ class BookingManager {
         formData.append('referral', this.formData.referral);
         formData.append('specialInstructions', this.formData.specialInstructions);
 
+        console.log('Submitting form to /booking...');
+
         try {
             const response = await fetch('/booking', {
                 method: 'POST',
                 body: formData
             });
 
+            console.log('Response status:', response.status);
+            console.log('Response OK:', response.ok);
+
             if (response.ok) {
                 // Generate order number
                 const orderNumber = this.generateOrderNumber();
+                console.log('Order number generated:', orderNumber);
 
                 // Redirect to confirmation page
-                window.location.href = `/confirmation?order=${orderNumber}&status=invoice&email=${encodeURIComponent(this.formData.email)}`;
+                const confirmUrl = `/confirmation?order=${orderNumber}&status=invoice&email=${encodeURIComponent(this.formData.email)}`;
+                console.log('Redirecting to:', confirmUrl);
+                window.location.href = confirmUrl;
             } else {
-                throw new Error('Form submission failed');
+                const responseText = await response.text();
+                console.error('Response error:', responseText);
+                throw new Error(`Form submission failed with status ${response.status}`);
             }
 
         } catch (error) {
