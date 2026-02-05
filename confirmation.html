@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Booking confirmed - Las Vegas Logic Media. Your professional media services booking has been confirmed.">
+    <title>Booking Confirmed - Las Vegas Logic Media</title>
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="styles.css" as="style">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Las Vegas Logic Media</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation-section">
+        <div class="container">
+            <div class="confirmation-container">
+                <!-- Success Icon -->
+                <div class="success-icon">
+                    <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="success-circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="success-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+
+                <!-- Confirmation Message -->
+                <h1 class="confirmation-title">Booking Confirmed!</h1>
+                <p class="confirmation-subtitle" id="confirmationSubtitle">
+                    Thank you for choosing Las Vegas Logic Media
+                </p>
+
+                <!-- Order Number -->
+                <div class="order-number-box">
+                    <span class="order-label">Order Number:</span>
+                    <span class="order-number" id="orderNumber">---</span>
+                </div>
+
+                <!-- Booking Details Card -->
+                <div class="booking-details-card">
+                    <h2>Booking Summary</h2>
+
+                    <!-- Services Section -->
+                    <div class="detail-section">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 11l3 3L22 4"></path>
+                                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                            </svg>
+                            Services Booked
+                        </h3>
+                        <div id="servicesBooked" class="detail-content">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Property Details Section -->
+                    <div class="detail-section">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            Property Details
+                        </h3>
+                        <div id="propertyDetails" class="detail-content">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Appointment Section -->
+                    <div class="detail-section">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Appointment
+                        </h3>
+                        <div id="appointmentDetails" class="detail-content">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                        <div class="appointment-note">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            <span>We'll confirm your appointment availability within 24 hours</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information Section -->
+                    <div class="detail-section">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Contact Information
+                        </h3>
+                        <div id="contactDetails" class="detail-content">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Payment Status Section -->
+                    <div class="detail-section payment-status">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                            Payment
+                        </h3>
+                        <div id="paymentStatus" class="detail-content">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Total Amount -->
+                    <div class="detail-total">
+                        <span>Total Amount:</span>
+                        <span id="totalAmount" class="total-value">$0</span>
+                    </div>
+                </div>
+
+                <!-- Next Steps -->
+                <div class="next-steps-card">
+                    <h2>What Happens Next?</h2>
+                    <div class="steps-grid">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Email Confirmation</h4>
+                                <p>You'll receive a confirmation email shortly with all your booking details</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Appointment Confirmation</h4>
+                                <p>We'll contact you within 24 hours to confirm your preferred appointment time</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Appointment Reminder</h4>
+                                <p>You'll receive a reminder 24 hours before your scheduled appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+                    <button onclick="window.print()" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        Print Details
+                    </button>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="confirmation-contact">
+                    <p>Questions about your booking?</p>
+                    <p><strong>Call us:</strong> <a href="tel:702-800-4558">(702) 800-4558</a></p>
+                    <p><strong>Email:</strong> <a
+                            href="mailto:lasvegaslogicmedia@gmail.com">lasvegaslogicmedia@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Las Vegas Logic Media</h3>
+                    <p>Professional media services for Las Vegas businesses and real estate professionals since 1998.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lasvegaslogicmedia" target="_blank" rel="noopener"
+                            aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:702-800-4558">(702) 800-4558</a></li>
+                        <li><a href="mailto:lasvegaslogicmedia@gmail.com">lasvegaslogicmedia@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Las Vegas Logic Media. All rights reserved. | <a href="index.html">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="confirmation.js"></script>
+</body>
+
+</html>

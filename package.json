@@ -1,0 +1,26 @@
+{
+  "name": "lvlogicmedia-booking",
+  "version": "1.0.0",
+  "description": "Las Vegas Logic Media - Professional Media Services Booking System",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/drone-website"
+  },
+  "keywords": [
+    "drone",
+    "photography",
+    "videography",
+    "real-estate",
+    "media",
+    "las-vegas"
+  ],
+  "author": "Las Vegas Logic Media",
+  "license": "ISC",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}

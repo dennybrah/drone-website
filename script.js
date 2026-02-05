@@ -1,4 +1,43 @@
 // ===================================
+// A/B Testing Framework
+// ===================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Variant assignment (50/50 split)
+    const variant = localStorage.getItem('abVariant') || (Math.random() < 0.5 ? 'A' : 'B');
+    localStorage.setItem('abVariant', variant);
+
+    // Track which variant user sees
+    console.log('A/B Test Variant:', variant);
+
+    // Test 1: CTA Button Text
+    if (variant === 'B') {
+        const heroCTA = document.querySelector('.hero-buttons .btn-primary');
+        if (heroCTA) {
+            heroCTA.textContent = 'Book Your Shoot Today →'; // Variant B
+            // Variant A keeps "Get a Free Quote Today →"
+        }
+    }
+
+    // Test 2: Hero Subtitle emphasis (already in HTML for Variant A)
+    // Variant B would have different emphasis if needed
+
+    // Track conversions (add to contact form submission)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function() {
+            // Log conversion with variant
+            if (window.gtag) {
+                gtag('event', 'conversion', {
+                    'variant': variant,
+                    'form': 'contact'
+                });
+            }
+            console.log('Conversion tracked for variant:', variant);
+        });
+    }
+});
+
+// ===================================
 // Mobile Menu Toggle
 // ===================================
 document.addEventListener('DOMContentLoaded', function () {
@@ -268,7 +307,7 @@ class Gallery {
             const activeClass = index === 0 ? 'active' : '';
             html += `
                 <div class="gallery-slide ${activeClass}" style="display: ${displayStyle}" onclick="gallery_${this.safeId}.openLightbox(${index})">
-                    <img src="${this.imagesFolder}/${imgName}" style="width:100%; object-fit: cover; aspect-ratio: 4/3;">
+                    <img src="${this.imagesFolder}/${imgName}" loading="lazy" style="width:100%; object-fit: cover; aspect-ratio: 4/3;">
                     <div class="gallery-counter">${index + 1} / ${this.imageList.length}</div>
                 </div>
             `;

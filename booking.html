@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Complete your booking for Las Vegas Logic Media services. Secure online booking with instant confirmation.">
+    <meta name="keywords"
+        content="Las Vegas media booking, real estate photography booking, video production booking">
+    <meta name="author" content="Las Vegas Logic Media">
+    <meta property="og:title" content="Complete Your Booking | Las Vegas Logic Media">
+    <meta property="og:description" content="Fill out your booking details and secure your appointment date.">
+    <meta property="og:type" content="website">
+    <title>Complete Your Booking | Las Vegas Logic Media</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://lvlogicmedia.com/booking">
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="logo">
+                    <span class="logo-text">Las Vegas Logic Media</span>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Complete Your Booking</h1>
+            <p>Just a few details and you're all set</p>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-layout">
+
+                <!-- Main Form Column -->
+                <div class="booking-form-column">
+
+                    <form id="bookingForm" class="booking-form">
+
+                        <!-- Section 1: Property Details -->
+                        <div class="form-section">
+                            <h2 class="form-section-header">
+                                <span class="section-number">1</span>
+                                Property Details
+                            </h2>
+
+                            <div class="property-fields-grid">
+                                <div class="form-group full-width">
+                                    <label for="address">Property Address *</label>
+                                    <input type="text" id="address" name="address" required
+                                           placeholder="1234 Main Street, Las Vegas, NV 89101">
+                                    <span class="error-message" id="addressError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="unitNumber">Unit Number</label>
+                                    <input type="text" id="unitNumber" name="unitNumber"
+                                           placeholder="Apt 5B, Suite 200 (optional)">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gateCode">Gate Code</label>
+                                    <input type="text" id="gateCode" name="gateCode"
+                                           placeholder="Access code if needed">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mlsNumber">MLS Number</label>
+                                    <input type="text" id="mlsNumber" name="mlsNumber"
+                                           placeholder="Optional">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sqft">Square Footage *</label>
+                                    <input type="number" id="sqft" name="sqft" required min="100" max="50000"
+                                           placeholder="e.g., 2500">
+                                    <span class="error-message" id="sqftError"></span>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Vacancy Status *</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="vacancy" value="occupied" required>
+                                            <span class="radio-label">Occupied</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="vacancy" value="vacant" required>
+                                            <span class="radio-label">Vacant</span>
+                                        </label>
+                                    </div>
+                                    <span class="error-message" id="vacancyError"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Appointment Scheduling -->
+                        <div class="form-section">
+                            <h2 class="form-section-header">
+                                <span class="section-number">2</span>
+                                Schedule Appointment
+                            </h2>
+
+                            <p class="section-note">
+                                📅 Select your preferred date and time. We'll confirm availability within 24 hours.
+                            </p>
+
+                            <div class="appointment-fields-group">
+                                <div class="form-group">
+                                    <label for="preferredDate">Preferred Date *</label>
+                                    <input type="date" id="preferredDate" name="preferredDate" required>
+                                    <span class="error-message" id="dateError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="preferredTime">Preferred Time *</label>
+                                    <select id="preferredTime" name="preferredTime" required>
+                                        <option value="">Select a time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                    </select>
+                                    <span class="error-message" id="timeError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="alternateDate">Alternative Date (Optional)</label>
+                                    <input type="date" id="alternateDate" name="alternateDate">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="alternateTime">Alternative Time (Optional)</label>
+                                    <select id="alternateTime" name="alternateTime">
+                                        <option value="">Select a time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Contact Information -->
+                        <div class="form-section">
+                            <h2 class="form-section-header">
+                                <span class="section-number">3</span>
+                                Contact Information
+                            </h2>
+
+                            <div class="property-fields-grid">
+                                <div class="form-group full-width">
+                                    <label for="fullName">Full Name *</label>
+                                    <input type="text" id="fullName" name="fullName" required
+                                           placeholder="John Doe">
+                                    <span class="error-message" id="nameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required
+                                           placeholder="john@example.com">
+                                    <span class="error-message" id="emailError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required
+                                           placeholder="(702) 555-0100">
+                                    <span class="error-message" id="phoneError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="company">Company/Agency</label>
+                                    <input type="text" id="company" name="company"
+                                           placeholder="Optional">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="referral">How Did You Hear About Us?</label>
+                                    <select id="referral" name="referral">
+                                        <option value="">Select one</option>
+                                        <option value="google">Google Search</option>
+                                        <option value="instagram">Instagram</option>
+                                        <option value="referral">Referral</option>
+                                        <option value="zillow">Zillow</option>
+                                        <option value="facebook">Facebook</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 4: Special Instructions -->
+                        <div class="form-section">
+                            <h2 class="form-section-header">
+                                <span class="section-number">4</span>
+                                Special Instructions
+                            </h2>
+
+                            <div class="form-group">
+                                <label for="specialInstructions">Additional Details (Optional)</label>
+                                <textarea id="specialInstructions" name="specialInstructions" rows="5"
+                                    placeholder="Example: Owner's name for access, pets on property, special requests, unique access instructions, etc."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Section 5: Payment Selection -->
+                        <div class="form-section">
+                            <h2 class="form-section-header">
+                                <span class="section-number">5</span>
+                                Payment Method
+                            </h2>
+
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="pay-now" required>
+                                    <div class="payment-card">
+                                        <div class="payment-header">
+                                            <svg class="payment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                                            </svg>
+                                            <div>
+                                                <h3>Pay Now</h3>
+                                                <p class="payment-badge">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                                    </svg>
+                                                    Secure payment via Stripe
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="payment-description">Pay securely with credit card. Instant confirmation.</p>
+                                        <div class="payment-total">Total: <span id="payNowTotal">$0</span></div>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="invoice" required>
+                                    <div class="payment-card">
+                                        <div class="payment-header">
+                                            <svg class="payment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            <div>
+                                                <h3>Request Invoice</h3>
+                                                <p class="payment-badge">Pay later via email invoice</p>
+                                            </div>
+                                        </div>
+                                        <p class="payment-description">We'll send an invoice within 1 business day. Payment due before appointment.</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <span class="error-message" id="paymentError"></span>
+                        </div>
+
+                        <!-- Section 6: Terms & Submit -->
+                        <div class="form-section">
+                            <div class="terms-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span>I agree to the <a href="/terms" target="_blank">terms and conditions</a> *</span>
+                                </label>
+                                <span class="error-message" id="termsError"></span>
+                            </div>
+
+                            <button type="submit" id="placeOrderBtn" class="btn btn-primary place-order-btn" disabled>
+                                <span class="btn-text">PLACE ORDER</span>
+                                <span class="btn-spinner" style="display: none;">
+                                    <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
+                                        <circle class="spinner-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3"></circle>
+                                    </svg>
+                                    Processing...
+                                </span>
+                            </button>
+                        </div>
+
+                    </form>
+
+                    <!-- Hidden Netlify Form for Invoice Submissions -->
+                    <form name="booking-invoice" netlify netlify-honeypot="bot-field" hidden>
+                        <input type="text" name="orderNumber" />
+                        <input type="text" name="name" />
+                        <input type="email" name="email" />
+                        <input type="tel" name="phone" />
+                        <textarea name="services"></textarea>
+                        <input type="text" name="total" />
+                        <textarea name="address"></textarea>
+                        <input type="text" name="unitNumber" />
+                        <input type="text" name="gateCode" />
+                        <input type="text" name="vacancy" />
+                        <input type="text" name="mlsNumber" />
+                        <input type="text" name="sqft" />
+                        <input type="text" name="preferredDate" />
+                        <input type="text" name="preferredTime" />
+                        <input type="text" name="alternateDate" />
+                        <input type="text" name="alternateTime" />
+                        <input type="text" name="company" />
+                        <input type="text" name="referral" />
+                        <textarea name="specialInstructions"></textarea>
+                    </form>
+
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <div class="order-summary-column">
+                    <div class="order-summary-sticky">
+                        <h3>Order Summary</h3>
+
+                        <div id="orderSummaryItems" class="order-summary-items">
+                            <p class="loading-message">Loading your order...</p>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-total-row">
+                            <span>Total</span>
+                            <span class="summary-total-amount" id="summaryTotal">$0</span>
+                        </div>
+
+                        <a href="/pricing" class="edit-order-link">← Edit Selection</a>
+
+                        <div class="summary-features">
+                            <div class="summary-feature">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                <span>Secure Booking</span>
+                            </div>
+                            <div class="summary-feature">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Instant Confirmation</span>
+                            </div>
+                            <div class="summary-feature">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Local Las Vegas Team</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Las Vegas Logic Media</h4>
+                    <p>Real Estate Media & Video Production</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: denny@lvlogicmedia.com</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lvlogicmedia" class="social-icon" aria-label="Instagram"
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@lvlogicmedia" class="social-icon" aria-label="YouTube"
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Las Vegas Logic Media. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="booking.js"></script>
+</body>
+
+</html>
