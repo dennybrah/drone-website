@@ -40,10 +40,9 @@ class BookingManager {
         const services = urlParams.getAll('service');
         const total = urlParams.get('total');
 
-        const selectedItemsContainer = document.getElementById('selected-items');
-        const totalAmountElement = document.getElementById('total-amount');
+        const selectedItemsContainer = document.getElementById('orderSummaryItems');
+        const totalAmountElement = document.getElementById('summaryTotal');
         const payNowTotal = document.getElementById('payNowTotal');
-        const invoiceTotal = document.getElementById('invoiceTotal');
 
         // Clear loading message
         selectedItemsContainer.innerHTML = '';
@@ -65,10 +64,6 @@ class BookingManager {
             if (payNowTotal) {
                 payNowTotal.textContent = formattedTotal;
             }
-
-            if (invoiceTotal) {
-                invoiceTotal.textContent = formattedTotal;
-            }
         } else {
             selectedItemsContainer.innerHTML = `
                 <p class="empty-message">No services selected</p>
@@ -82,10 +77,6 @@ class BookingManager {
 
             if (payNowTotal) {
                 payNowTotal.textContent = '$0';
-            }
-
-            if (invoiceTotal) {
-                invoiceTotal.textContent = '$0';
             }
         }
     }
