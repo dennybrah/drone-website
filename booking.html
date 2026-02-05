@@ -348,40 +348,27 @@
                 <!-- Order Summary Sidebar -->
                 <div class="order-summary-column">
                     <div class="order-summary-sticky">
-                        <h3>Order Summary</h3>
+                        <div class="order-summary">
+                            <h3>Order Summary</h3>
 
-                        <div id="orderSummaryItems" class="order-summary-items">
-                            <p class="loading-message">Loading your order...</p>
-                        </div>
+                            <div id="orderSummaryItems" class="order-summary-items">
+                                <p class="loading-message">Loading your order...</p>
+                            </div>
 
-                        <div class="summary-divider"></div>
+                            <div class="summary-divider"></div>
 
-                        <div class="summary-total-row">
-                            <span>Total</span>
-                            <span class="summary-total-amount" id="summaryTotal">$0</span>
-                        </div>
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span class="total-amount" id="summaryTotal">$0</span>
+                            </div>
 
-                        <a href="/pricing" class="edit-order-link">← Edit Selection</a>
+                            <a href="/pricing" class="edit-selection">← Edit Selection</a>
 
-                        <div class="summary-features">
-                            <div class="summary-feature">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <div class="summary-note">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                 </svg>
-                                <span>Secure Booking</span>
-                            </div>
-                            <div class="summary-feature">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                                <span>Instant Confirmation</span>
-                            </div>
-                            <div class="summary-feature">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                                <span>Local Las Vegas Team</span>
+                                Secure booking • Instant confirmation
                             </div>
                         </div>
                     </div>

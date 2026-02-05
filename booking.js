@@ -40,9 +40,21 @@ class BookingManager {
         const services = urlParams.getAll('service');
         const total = urlParams.get('total');
 
+        console.log('Loading order summary...');
+        console.log('Services:', services);
+        console.log('Total:', total);
+
         const selectedItemsContainer = document.getElementById('orderSummaryItems');
         const totalAmountElement = document.getElementById('summaryTotal');
         const payNowTotal = document.getElementById('payNowTotal');
+
+        console.log('Container element:', selectedItemsContainer);
+        console.log('Total element:', totalAmountElement);
+
+        if (!selectedItemsContainer || !totalAmountElement) {
+            console.error('Required elements not found!');
+            return;
+        }
 
         // Clear loading message
         selectedItemsContainer.innerHTML = '';
