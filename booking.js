@@ -356,11 +356,11 @@ class BookingManager {
     }
 
     updateSubmitButton() {
-        const submitBtn = document.getElementById('submitBtn');
+        const submitBtn = document.getElementById('placeOrderBtn');
         const terms = document.getElementById('terms');
 
         // Enable button only if: terms checked, payment method selected, AND services selected (total > 0)
-        if (terms.checked && this.paymentMethod && this.total > 0) {
+        if (terms && terms.checked && this.paymentMethod && this.total > 0) {
             submitBtn.disabled = false;
         } else {
             submitBtn.disabled = true;
@@ -372,7 +372,7 @@ class BookingManager {
     // ===================================
     setupFormSubmission() {
         const form = document.getElementById('bookingForm');
-        const submitBtn = document.getElementById('submitBtn');
+        const submitBtn = document.getElementById('placeOrderBtn');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
