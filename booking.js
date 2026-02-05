@@ -635,6 +635,10 @@ class BookingManager {
 
 // Initialize booking manager when DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('=== Booking page JavaScript loaded ===');
+    console.log('Current URL:', window.location.href);
+    console.log('URL search params:', window.location.search);
+
     // Set minimum date for date pickers (tomorrow)
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -652,5 +656,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initialize booking manager
-    new BookingManager();
+    console.log('Initializing BookingManager...');
+    try {
+        new BookingManager();
+        console.log('BookingManager initialized successfully');
+    } catch (error) {
+        console.error('Error initializing BookingManager:', error);
+    }
 });

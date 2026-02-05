@@ -430,6 +430,20 @@
 
     <script src="script.js"></script>
     <script src="booking.js"></script>
+
+    <!-- Debug script -->
+    <script>
+        console.log('=== Inline debug script ===');
+        console.log('URL:', window.location.href);
+        console.log('Search:', window.location.search);
+
+        const params = new URLSearchParams(window.location.search);
+        console.log('Services:', params.getAll('service'));
+        console.log('Total:', params.get('total'));
+
+        console.log('orderSummaryItems element:', document.getElementById('orderSummaryItems'));
+        console.log('summaryTotal element:', document.getElementById('summaryTotal'));
+    </script>
 </body>
 
 </html>
