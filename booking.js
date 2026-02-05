@@ -259,7 +259,7 @@ class BookingManager {
     }
 
     validateName() {
-        const name = document.getElementById('name').value.trim();
+        const name = document.getElementById('fullName').value.trim();
         if (name.length < 2) {
             return this.showError('name', 'Please enter your full name');
         }
@@ -421,7 +421,7 @@ class BookingManager {
 
             // Property Details
             address: document.getElementById('address').value.trim(),
-            unit: document.getElementById('unit').value.trim(),
+            unit: document.getElementById('unitNumber').value.trim(),
             gateCode: document.getElementById('gateCode').value.trim(),
             vacancy: document.querySelector('input[name="vacancy"]:checked')?.value || '',
             mlsNumber: document.getElementById('mlsNumber').value.trim(),
@@ -434,7 +434,7 @@ class BookingManager {
             alternateTime: document.getElementById('alternateTime').value,
 
             // Contact Information
-            name: document.getElementById('name').value.trim(),
+            name: document.getElementById('fullName').value.trim(),
             email: document.getElementById('email').value.trim(),
             phone: document.getElementById('phone').value.trim(),
             company: document.getElementById('company').value.trim(),
@@ -608,7 +608,7 @@ class BookingManager {
     saveFormProgress() {
         const formProgress = {
             address: document.getElementById('address').value,
-            unit: document.getElementById('unit').value,
+            unit: document.getElementById('unitNumber').value,
             gateCode: document.getElementById('gateCode').value,
             vacancy: document.querySelector('input[name="vacancy"]:checked')?.value || '',
             mlsNumber: document.getElementById('mlsNumber').value,
@@ -617,7 +617,7 @@ class BookingManager {
             preferredTime: document.getElementById('preferredTime').value,
             alternateDate: document.getElementById('alternateDate').value,
             alternateTime: document.getElementById('alternateTime').value,
-            name: document.getElementById('name').value,
+            name: document.getElementById('fullName').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
             company: document.getElementById('company').value,
@@ -636,7 +636,7 @@ class BookingManager {
 
             // Restore field values
             if (data.address) document.getElementById('address').value = data.address;
-            if (data.unit) document.getElementById('unit').value = data.unit;
+            if (data.unit) document.getElementById('unitNumber').value = data.unit;
             if (data.gateCode) document.getElementById('gateCode').value = data.gateCode;
             if (data.mlsNumber) document.getElementById('mlsNumber').value = data.mlsNumber;
             if (data.sqft) document.getElementById('sqft').value = data.sqft;
@@ -644,7 +644,7 @@ class BookingManager {
             if (data.preferredTime) document.getElementById('preferredTime').value = data.preferredTime;
             if (data.alternateDate) document.getElementById('alternateDate').value = data.alternateDate;
             if (data.alternateTime) document.getElementById('alternateTime').value = data.alternateTime;
-            if (data.name) document.getElementById('name').value = data.name;
+            if (data.name) document.getElementById('fullName').value = data.name;
             if (data.email) document.getElementById('email').value = data.email;
             if (data.phone) document.getElementById('phone').value = data.phone;
             if (data.company) document.getElementById('company').value = data.company;
