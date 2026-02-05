@@ -40,19 +40,12 @@ class BookingManager {
         const services = urlParams.getAll('service');
         const total = urlParams.get('total');
 
-        console.log('Loading order summary...');
-        console.log('Services:', services);
-        console.log('Total:', total);
-
         const selectedItemsContainer = document.getElementById('orderSummaryItems');
         const totalAmountElement = document.getElementById('summaryTotal');
         const payNowTotal = document.getElementById('payNowTotal');
 
-        console.log('Container element:', selectedItemsContainer);
-        console.log('Total element:', totalAmountElement);
-
         if (!selectedItemsContainer || !totalAmountElement) {
-            console.error('Required elements not found!');
+            console.error('Order summary elements not found');
             return;
         }
 
@@ -635,10 +628,6 @@ class BookingManager {
 
 // Initialize booking manager when DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('=== Booking page JavaScript loaded ===');
-    console.log('Current URL:', window.location.href);
-    console.log('URL search params:', window.location.search);
-
     // Set minimum date for date pickers (tomorrow)
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -656,11 +645,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initialize booking manager
-    console.log('Initializing BookingManager...');
-    try {
-        new BookingManager();
-        console.log('BookingManager initialized successfully');
-    } catch (error) {
-        console.error('Error initializing BookingManager:', error);
-    }
+    new BookingManager();
 });
