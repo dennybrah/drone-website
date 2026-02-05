@@ -70,8 +70,23 @@ class BookingManager {
                 invoiceTotal.textContent = formattedTotal;
             }
         } else {
-            selectedItemsContainer.innerHTML = '<p class="empty-message">No services selected</p>';
+            selectedItemsContainer.innerHTML = `
+                <p class="empty-message">No services selected</p>
+                <p style="text-align: center; margin-top: 1rem;">
+                    <a href="/pricing" style="color: #4A8CFF; text-decoration: underline;">
+                        ← Return to pricing page to select services
+                    </a>
+                </p>
+            `;
             totalAmountElement.textContent = '$0';
+
+            if (payNowTotal) {
+                payNowTotal.textContent = '$0';
+            }
+
+            if (invoiceTotal) {
+                invoiceTotal.textContent = '$0';
+            }
         }
     }
 
@@ -300,6 +315,13 @@ class BookingManager {
     validateForm() {
         let isValid = true;
 
+        // First check if services are selected
+        if (this.total === 0 || this.selectedServices.length === 0) {
+            alert('Please select services from the pricing page first.');
+            window.location.href = '/pricing';
+            return false;
+        }
+
         // Validate all required fields
         isValid = this.validateAddress() && isValid;
         isValid = this.validateVacancy() && isValid;
@@ -341,7 +363,8 @@ class BookingManager {
         const submitBtn = document.getElementById('submitBtn');
         const terms = document.getElementById('terms');
 
-        if (terms.checked && this.paymentMethod) {
+        // Enable button only if: terms checked, payment method selected, AND services selected (total > 0)
+        if (terms.checked && this.paymentMethod && this.total > 0) {
             submitBtn.disabled = false;
         } else {
             submitBtn.disabled = true;
