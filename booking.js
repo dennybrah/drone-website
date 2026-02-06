@@ -162,8 +162,6 @@ class BookingManager {
                 return this.validatePhone();
             case 'paymentMethod':
                 return this.validatePaymentMethod();
-            case 'terms':
-                return this.validateTerms();
             default:
                 return true;
         }
@@ -299,14 +297,6 @@ class BookingManager {
         return true;
     }
 
-    validateTerms() {
-        const terms = document.getElementById('terms');
-        if (!terms.checked) {
-            alert('Please agree to the terms and conditions');
-            return false;
-        }
-        return true;
-    }
 
     validateForm() {
         let isValid = true;
@@ -328,7 +318,6 @@ class BookingManager {
         isValid = this.validateEmail() && isValid;
         isValid = this.validatePhone() && isValid;
         isValid = this.validatePaymentMethod() && isValid;
-        isValid = this.validateTerms() && isValid;
 
         return isValid;
     }
@@ -345,22 +334,13 @@ class BookingManager {
                 this.updateSubmitButton();
             });
         });
-
-        // Enable submit button when terms are checked
-        const termsCheckbox = document.getElementById('terms');
-        if (termsCheckbox) {
-            termsCheckbox.addEventListener('change', () => {
-                this.updateSubmitButton();
-            });
-        }
     }
 
     updateSubmitButton() {
         const submitBtn = document.getElementById('placeOrderBtn');
-        const terms = document.getElementById('terms');
 
-        // Enable button only if: terms checked, payment method selected, AND services selected (total > 0)
-        if (terms && terms.checked && this.paymentMethod && this.total > 0) {
+        // Enable button only if: payment method selected AND services selected (total > 0)
+        if (this.paymentMethod && this.total > 0) {
             submitBtn.disabled = false;
         } else {
             submitBtn.disabled = true;
