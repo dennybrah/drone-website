@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Complete your booking for Las Vegas Logic Media services. Secure online booking with instant confirmation.">
-    <meta name="keywords"
-        content="Las Vegas media booking, real estate photography booking, video production booking">
+    <meta name="keywords" content="Las Vegas media booking, real estate photography booking, video production booking">
     <meta name="author" content="Las Vegas Logic Media">
     <meta property="og:title" content="Complete Your Booking | Las Vegas Logic Media">
     <meta property="og:description" content="Fill out your booking details and secure your appointment date.">
@@ -75,32 +74,31 @@
                                 <div class="form-group full-width">
                                     <label for="address">Property Address *</label>
                                     <input type="text" id="address" name="address" required
-                                           placeholder="1234 Main Street, Las Vegas, NV 89101">
+                                        placeholder="1234 Main Street, Las Vegas, NV 89101">
                                     <span class="error-message" id="addressError"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="unitNumber">Unit Number</label>
                                     <input type="text" id="unitNumber" name="unitNumber"
-                                           placeholder="Apt 5B, Suite 200 (optional)">
+                                        placeholder="Apt 5B, Suite 200 (optional)">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="gateCode">Gate Code</label>
                                     <input type="text" id="gateCode" name="gateCode"
-                                           placeholder="Access code if needed">
+                                        placeholder="Access code if needed">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="mlsNumber">MLS Number</label>
-                                    <input type="text" id="mlsNumber" name="mlsNumber"
-                                           placeholder="Optional">
+                                    <input type="text" id="mlsNumber" name="mlsNumber" placeholder="Optional">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="sqft">Square Footage *</label>
                                     <input type="number" id="sqft" name="sqft" required min="100" max="50000"
-                                           placeholder="e.g., 2500">
+                                        placeholder="e.g., 2500">
                                     <span class="error-message" id="sqftError"></span>
                                 </div>
 
@@ -189,29 +187,25 @@
                             <div class="property-fields-grid">
                                 <div class="form-group full-width">
                                     <label for="fullName">Full Name *</label>
-                                    <input type="text" id="fullName" name="fullName" required
-                                           placeholder="John Doe">
+                                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
                                     <span class="error-message" id="nameError"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" required
-                                           placeholder="john@example.com">
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com">
                                     <span class="error-message" id="emailError"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone">Phone Number *</label>
-                                    <input type="tel" id="phone" name="phone" required
-                                           placeholder="(702) 555-0100">
+                                    <input type="tel" id="phone" name="phone" required placeholder="(702) 555-0100">
                                     <span class="error-message" id="phoneError"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="company">Company/Agency</label>
-                                    <input type="text" id="company" name="company"
-                                           placeholder="Optional">
+                                    <input type="text" id="company" name="company" placeholder="Optional">
                                 </div>
 
                                 <div class="form-group">
@@ -255,21 +249,24 @@
                                     <input type="radio" name="paymentMethod" value="pay-now" required>
                                     <div class="payment-card">
                                         <div class="payment-header">
-                                            <svg class="payment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <svg class="payment-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor">
                                                 <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                                                 <line x1="1" y1="10" x2="23" y2="10"></line>
                                             </svg>
                                             <div>
                                                 <h3>Pay Now</h3>
                                                 <p class="payment-badge">
-                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor">
                                                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                                     </svg>
                                                     Secure payment via Stripe
                                                 </p>
                                             </div>
                                         </div>
-                                        <p class="payment-description">Pay securely with credit card. Instant confirmation.</p>
+                                        <p class="payment-description">Pay securely with credit card. Instant
+                                            confirmation.</p>
                                         <div class="payment-total">Total: <span id="payNowTotal">$0</span></div>
                                     </div>
                                 </label>
@@ -278,8 +275,10 @@
                                     <input type="radio" name="paymentMethod" value="invoice" required>
                                     <div class="payment-card">
                                         <div class="payment-header">
-                                            <svg class="payment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <svg class="payment-icon" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+                                                </path>
                                                 <polyline points="14 2 14 8 20 8"></polyline>
                                                 <line x1="16" y1="13" x2="8" y2="13"></line>
                                                 <line x1="16" y1="17" x2="8" y2="17"></line>
@@ -290,7 +289,8 @@
                                                 <p class="payment-badge">Pay later via email invoice</p>
                                             </div>
                                         </div>
-                                        <p class="payment-description">We'll send an invoice within 1 business day. Payment due before appointment.</p>
+                                        <p class="payment-description">We'll send an invoice within 1 business day.
+                                            Payment due before appointment.</p>
                                     </div>
                                 </label>
                             </div>
@@ -303,7 +303,8 @@
                                 <span class="btn-text">PLACE ORDER</span>
                                 <span class="btn-spinner" style="display: none;">
                                     <svg class="spinner" width="20" height="20" viewBox="0 0 24 24">
-                                        <circle class="spinner-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="3"></circle>
+                                        <circle class="spinner-circle" cx="12" cy="12" r="10" fill="none"
+                                            stroke="currentColor" stroke-width="3"></circle>
                                     </svg>
                                     Processing...
                                 </span>
@@ -357,7 +358,9 @@
                             <a href="/pricing" class="edit-selection">← Edit Selection</a>
 
                             <div class="summary-note">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2"
+                                    style="display: inline; vertical-align: middle; margin-right: 0.5rem;">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                 </svg>
                                 Secure booking • Instant confirmation
@@ -376,7 +379,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Las Vegas Logic Media</h4>
-                    <p>Real Estate Media & Video Production</p>
+                    <p>Professional Media & Video Production</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
