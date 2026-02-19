@@ -30,6 +30,9 @@ class BookingManager {
 
         // Auto-save form data
         this.setupAutoSave();
+
+        // Setup skip scheduling toggle
+        this.setupSkipScheduling();
     }
 
     // ===================================
@@ -228,7 +231,14 @@ class BookingManager {
         return true;
     }
 
+    isSkippingSchedule() {
+        const skip = document.getElementById('skipScheduling');
+        return skip && skip.checked;
+    }
+
     validateDate() {
+        if (this.isSkippingSchedule()) return true;
+
         const dateInput = document.getElementById('preferredDate');
         const selectedDate = new Date(dateInput.value);
         const tomorrow = new Date();
@@ -248,12 +258,39 @@ class BookingManager {
     }
 
     validateTime() {
+        if (this.isSkippingSchedule()) return true;
+
         const time = document.getElementById('preferredTime').value;
         if (!time) {
             return this.showError('preferredTime', 'Please select a preferred time');
         }
         this.clearError('preferredTime');
         return true;
+    }
+
+    setupSkipScheduling() {
+        const checkbox = document.getElementById('skipScheduling');
+        const fields = document.getElementById('schedulingFields');
+        if (!checkbox || !fields) return;
+
+        checkbox.addEventListener('change', () => {
+            const skip = checkbox.checked;
+            fields.style.opacity = skip ? '0.4' : '1';
+            fields.style.pointerEvents = skip ? 'none' : '';
+
+            // Remove required attrs when skipping, restore when not
+            const dateInput = document.getElementById('preferredDate');
+            const timeInput = document.getElementById('preferredTime');
+            if (skip) {
+                dateInput.removeAttribute('required');
+                timeInput.removeAttribute('required');
+                this.clearError('preferredDate');
+                this.clearError('preferredTime');
+            } else {
+                dateInput.setAttribute('required', '');
+                timeInput.setAttribute('required', '');
+            }
+        });
     }
 
     validateName() {
@@ -651,6 +688,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (preferredDateInput) {
         preferredDateInput.setAttribute('min', minDate);
+        preferredDateInput.value = minDate; // Default to tomorrow
     }
 
     if (alternateDateInput) {

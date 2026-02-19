@@ -130,7 +130,14 @@
                                 📅 Select your preferred date and time. We'll confirm availability within 24 hours.
                             </p>
 
-                            <div class="appointment-fields-group">
+                            <!-- Skip Scheduling Checkbox -->
+                            <label class="skip-scheduling-label">
+                                <input type="checkbox" id="skipScheduling" name="skipScheduling">
+                                <span class="skip-scheduling-text">⏭️ Skip scheduling — I'll coordinate a date
+                                    later</span>
+                            </label>
+
+                            <div class="appointment-fields-group" id="schedulingFields">
                                 <div class="form-group">
                                     <label for="preferredDate">Preferred Date *</label>
                                     <input type="date" id="preferredDate" name="preferredDate" required>
