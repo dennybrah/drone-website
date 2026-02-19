@@ -481,10 +481,9 @@ class BookingManager {
             const session = await response.json();
             console.log('Session created:', session);
 
-            // Initialize Stripe with your publishable key
-            // TODO: Replace with your actual Stripe publishable key
+            // Initialize Stripe with live publishable key
             console.log('Initializing Stripe with key...');
-            const stripe = Stripe('pk_test_YOUR_STRIPE_KEY_HERE');
+            const stripe = Stripe('pk_live_51T232JC4eKwdaXEGoSEW0KoW6ssBhWldmvKCa4TsZMHD1758PIZzgYD1Usdbryit7qD5MObwzjPUrEa4JKKMghkn00OAS7O4iF');
 
             console.log('Redirecting to Stripe Checkout...');
             // Redirect to Stripe Checkout
