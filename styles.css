@@ -1274,6 +1274,55 @@ ul {
 }
 
 /* ===================================
+   SEO Landing Pages
+   =================================== */
+.seo-landing {
+    padding: 6rem 0;
+    background: transparent;
+}
+
+.landing-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.landing-copy h2 {
+    color: var(--text-primary);
+    font-size: 2.35rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.landing-copy h3 {
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    margin: 2rem 0 0.75rem;
+}
+
+.landing-copy p {
+    color: var(--text-secondary);
+    font-size: 1.075rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.landing-media {
+    min-height: 430px;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* ===================================
    Process Section
    =================================== */
 .process {
@@ -1726,13 +1775,18 @@ ul {
     }
 
     .service-detail-content,
-    .service-detail-content.reverse {
+    .service-detail-content.reverse,
+    .landing-grid {
         grid-template-columns: 1fr;
         direction: ltr;
     }
 
     .service-detail-image {
         height: 300px;
+    }
+
+    .landing-media {
+        min-height: 320px;
     }
 
     .contact-wrapper {
