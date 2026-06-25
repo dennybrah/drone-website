@@ -536,6 +536,54 @@ ul {
 }
 
 /* ===================================
+   Process Section
+   =================================== */
+.process {
+    padding: 6rem 0;
+    background: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.process-step {
+    padding: 2rem;
+    background: rgba(26, 29, 35, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 1.25rem;
+    border-radius: 50%;
+    background: rgba(74, 140, 255, 0.15);
+    border: 1px solid rgba(74, 140, 255, 0.45);
+    color: #4A8CFF;
+    font-weight: 800;
+}
+
+.process-step h3 {
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.process-step p {
+    color: var(--text-secondary);
+}
+
+/* ===================================
    Meet the Pilot Section
    =================================== */
 .meet-pilot {
@@ -912,6 +960,56 @@ ul {
     color: var(--text-primary);
     font-size: 1rem;
     margin: 0;
+}
+
+.simple-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.simple-price-card {
+    position: relative;
+    min-height: 190px;
+    padding: 1.75rem;
+    background: rgba(26, 29, 35, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    transition: var(--transition);
+}
+
+.simple-price-card:hover {
+    transform: translateY(-5px);
+    border-color: #4A8CFF;
+    box-shadow: var(--shadow-xl);
+}
+
+.simple-price-card.featured {
+    border-color: #4A8CFF;
+    box-shadow: 0 0 30px rgba(74, 140, 255, 0.22);
+}
+
+.simple-price-card h3 {
+    min-height: 58px;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.35;
+    margin-bottom: 1.5rem;
+}
+
+.simple-price {
+    color: #4A8CFF;
+    font-size: 2.4rem;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.simple-price-card span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 /* ===================================
@@ -1764,13 +1862,22 @@ ul {
     }
 
     .hero-social-proof {
-        flex-direction: column;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        padding: 1rem;
     }
 
     .proof-divider {
-        width: 60%;
-        height: 1px;
+        display: none;
+    }
+
+    .proof-number {
+        font-size: 1.45rem;
+    }
+
+    .proof-label {
+        font-size: 0.75rem;
     }
 
     .hero-trust-badges {
