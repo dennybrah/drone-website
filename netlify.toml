@@ -50,6 +50,11 @@
   status = 200
 
 [[redirects]]
+  from = "/drone-photography-las-vegas"
+  to = "/drone-photography-las-vegas.html"
+  status = 200
+
+[[redirects]]
   from = "/construction-progress-drone-services-las-vegas"
   to = "/construction-progress-drone-services-las-vegas.html"
   status = 200
