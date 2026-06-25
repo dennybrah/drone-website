@@ -50,305 +50,94 @@
     <section class="page-header">
         <div class="container">
             <h1>Las Vegas Real Estate Media Pricing</h1>
-            <p>Build a package for listing photos, drone coverage, video, construction updates, or raw footage.</p>
+            <p>Starting prices for listing photos, drone coverage, video, construction updates, and raw footage.</p>
         </div>
     </section>
 
-    <!-- Interactive Pricing Section -->
-    <section class="interactive-pricing-section">
+    <!-- Pricing Overview Section -->
+    <section class="pricing-overview-section">
         <div class="container">
-            <div class="pricing-layout">
-                <!-- Left Column: Services -->
-                <div class="services-column">
+            <div class="pricing-intro">
+                <h2>Simple starting points, then a clear quote if the project needs more.</h2>
+                <p>JCL separates pricing by service type, which is easier to scan than one giant mixed menu. This page
+                    does the same for your work: real estate packages, drone-only work, business video, construction,
+                    and raw footage each get their own lane.</p>
+            </div>
 
-                    <!-- Packages Section -->
-                    <div class="pricing-category">
-                        <h2 class="category-title">Choose a Package <span class="optional-badge">Optional</span></h2>
-                        <p class="category-subtitle">Select one complete package or build à la carte below</p>
-
-                        <div class="package-grid">
-                            <!-- Base Package -->
-                            <div class="selectable-card package-card" data-type="package" data-id="base"
-                                data-price="295">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="radio" name="package" id="pkg-base" value="base">
-                                        <label for="pkg-base"></label>
-                                    </div>
-                                    <div>
-                                        <h3>BASE Package</h3>
-                                        <div class="card-price">$295</div>
-                                    </div>
-                                </div>
-                                <ul class="card-features">
-                                    <li>25 MLS Photos</li>
-                                    <li>3 Drone Photos</li>
-                                    <li>Premium Floor Plan</li>
-                                    <li>Zillow 3D Tour</li>
-                                </ul>
-                            </div>
-
-                            <!-- Pro Package -->
-                            <div class="selectable-card package-card popular" data-type="package" data-id="pro"
-                                data-price="475">
-                                <div class="popular-tag">Popular</div>
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="radio" name="package" id="pkg-pro" value="pro">
-                                        <label for="pkg-pro"></label>
-                                    </div>
-                                    <div>
-                                        <h3>PRO Package</h3>
-                                        <div class="card-price">$475</div>
-                                    </div>
-                                </div>
-                                <ul class="card-features">
-                                    <li>40 MLS Photos</li>
-                                    <li>6 Drone Photos</li>
-                                    <li>Premium Floor Plan</li>
-                                    <li>Zillow 3D Tour</li>
-                                    <li>Vertical Social Reel</li>
-                                </ul>
-                            </div>
-
-                            <!-- Plus Package -->
-                            <div class="selectable-card package-card" data-type="package" data-id="plus"
-                                data-price="675">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="radio" name="package" id="pkg-plus" value="plus">
-                                        <label for="pkg-plus"></label>
-                                    </div>
-                                    <div>
-                                        <h3>PLUS Package</h3>
-                                        <div class="card-price">$675</div>
-                                    </div>
-                                </div>
-                                <ul class="card-features">
-                                    <li>40 MLS Photos</li>
-                                    <li>12 Drone Photos</li>
-                                    <li>Premium Floor Plan</li>
-                                    <li>Zillow 3D Tour</li>
-                                    <li>Vertical Social Reel</li>
-                                    <li>Standard Video (60 sec)</li>
-                                    <li>3D Floor Plan</li>
-                                </ul>
-                            </div>
-
-                            <!-- Luxury Package -->
-                            <div class="selectable-card package-card" data-type="package" data-id="luxury"
-                                data-price="1295">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="radio" name="package" id="pkg-luxury" value="luxury">
-                                        <label for="pkg-luxury"></label>
-                                    </div>
-                                    <div>
-                                        <h3>LUXURY Package</h3>
-                                        <div class="card-price">$1,295</div>
-                                    </div>
-                                </div>
-                                <ul class="card-features">
-                                    <li>60 MLS Photos</li>
-                                    <li>12 Drone Photos</li>
-                                    <li>Premium Floor Plan</li>
-                                    <li>Zillow 3D Tour</li>
-                                    <li>Vertical Social Reel</li>
-                                    <li>Premium Cinematic Video (90+ sec)</li>
-                                    <li>3D Floor Plan</li>
-                                    <li>Interactive Floor Plan Tour</li>
-                                    <li>Twilight Photos (6 shots)</li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="pricing-category">
+                <div class="pricing-category-header">
+                    <div>
+                        <h2>Real Estate Listing Media</h2>
+                        <p>Ground photos, aerial add-ons, and listing video for residential and commercial properties.</p>
                     </div>
-
-                    <!-- Add-Ons Section -->
-                    <div class="pricing-category">
-                        <h2 class="category-title">Add-On Services</h2>
-                        <p class="category-subtitle">Enhance your package or build completely custom</p>
-
-                        <div class="addon-grid">
-                            <!-- MLS Photos -->
-                            <div class="selectable-card addon-card" data-type="addon" data-id="mls-10" data-price="145">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-mls-10">
-                                        <label for="addon-mls-10"></label>
-                                    </div>
-                                    <div>
-                                        <h4>10-15 MLS Photos</h4>
-                                        <div class="card-price">$145</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Quick shoot for smaller properties</p>
-                            </div>
-
-                            <div class="selectable-card addon-card" data-type="addon" data-id="mls-25" data-price="165">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-mls-25">
-                                        <label for="addon-mls-25"></label>
-                                    </div>
-                                    <div>
-                                        <h4>25 MLS Photos</h4>
-                                        <div class="card-price">$165</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Standard coverage for most properties</p>
-                            </div>
-
-                            <div class="selectable-card addon-card" data-type="addon" data-id="mls-40" data-price="185">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-mls-40">
-                                        <label for="addon-mls-40"></label>
-                                    </div>
-                                    <div>
-                                        <h4>40 MLS Photos</h4>
-                                        <div class="card-price">$185</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Comprehensive coverage for larger homes</p>
-                            </div>
-
-                            <div class="selectable-card addon-card" data-type="addon" data-id="mls-60" data-price="225">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-mls-60">
-                                        <label for="addon-mls-60"></label>
-                                    </div>
-                                    <div>
-                                        <h4>60 MLS Photos</h4>
-                                        <div class="card-price">$225</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Full coverage for high-end properties</p>
-                            </div>
-
-                            <!-- Drone Photos -->
-                            <div class="selectable-card addon-card" data-type="addon" data-id="drone" data-price="115">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-drone">
-                                        <label for="addon-drone"></label>
-                                    </div>
-                                    <div>
-                                        <h4>12 Drone Photos</h4>
-                                        <div class="card-price">$115</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Aerial shots of property & surroundings</p>
-                            </div>
-
-                            <!-- Twilight Photos -->
-                            <div class="selectable-card addon-card" data-type="addon" data-id="twilight"
-                                data-price="225">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-twilight">
-                                        <label for="addon-twilight"></label>
-                                    </div>
-                                    <div>
-                                        <h4>Twilight Photos (6)</h4>
-                                        <div class="card-price">$225</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Golden hour exterior shots</p>
-                            </div>
-
-                            <!-- Standard Video -->
-                            <div class="selectable-card addon-card" data-type="addon" data-id="video-standard"
-                                data-price="285">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-video-standard">
-                                        <label for="addon-video-standard"></label>
-                                    </div>
-                                    <div>
-                                        <h4>Standard Video (60 sec)</h4>
-                                        <div class="card-price">$285</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Cinematic interior, exterior & aerial</p>
-                            </div>
-
-                            <!-- Premium Video -->
-                            <div class="selectable-card addon-card" data-type="addon" data-id="video-premium"
-                                data-price="645">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-video-premium">
-                                        <label for="addon-video-premium"></label>
-                                    </div>
-                                    <div>
-                                        <h4>Premium Video (90+ sec)</h4>
-                                        <div class="card-price">$645</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Extended cinematic showcase</p>
-                            </div>
-
-                            <!-- Aerial Only Video -->
-                            <div class="selectable-card addon-card" data-type="addon" data-id="aerial-video"
-                                data-price="145">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-aerial-video">
-                                        <label for="addon-aerial-video"></label>
-                                    </div>
-                                    <div>
-                                        <h4>Aerial Only Video (30 sec)</h4>
-                                        <div class="card-price">$145</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Sky footage for lot & views</p>
-                            </div>
-
-                            <!-- Vertical Social Reel -->
-                            <div class="selectable-card addon-card" data-type="addon" data-id="social-reel"
-                                data-price="125">
-                                <div class="card-header">
-                                    <div class="card-checkbox">
-                                        <input type="checkbox" id="addon-social-reel">
-                                        <label for="addon-social-reel"></label>
-                                    </div>
-                                    <div>
-                                        <h4>Vertical Social Reel</h4>
-                                        <div class="card-price">$125</div>
-                                    </div>
-                                </div>
-                                <p class="card-description">Vertical walkthrough for social</p>
-                            </div>
-                        </div>
-                    </div>
-
+                    <a href="/real-estate-photography-las-vegas" class="service-link">Real estate details →</a>
                 </div>
-
-                <!-- Right Column: Order Summary (Sticky) -->
-                <div class="summary-column">
-                    <div class="order-summary">
-                        <h3>Your Order</h3>
-
-                        <div id="selected-items" class="selected-items">
-                            <p class="empty-message">No items selected</p>
-                        </div>
-
-                        <div class="summary-divider"></div>
-
-                        <div class="summary-total">
-                            <span>Total</span>
-                            <span class="total-amount" id="total-amount">$0</span>
-                        </div>
-
-                        <button id="checkout-btn" class="btn btn-primary btn-full" disabled>
-                            Proceed to Booking →
-                        </button>
-
-                        <p class="summary-note">💡 Final price confirmed after property details</p>
-                    </div>
+                <div class="price-menu-grid">
+                    <article class="price-menu-card">
+                        <span class="price-kicker">Aerial only</span>
+                        <h3>Aerial Photos</h3>
+                        <p class="menu-price">$199</p>
+                        <p>Drone photos for lots, exterior context, views, and property surroundings.</p>
+                    </article>
+                    <article class="price-menu-card">
+                        <span class="price-kicker">Listing starter</span>
+                        <h3>Real Estate Photo Package</h3>
+                        <p class="menu-price">$249</p>
+                        <p>Ground listing photography for most residential properties.</p>
+                    </article>
+                    <article class="price-menu-card featured">
+                        <span class="price-kicker">Most useful</span>
+                        <h3>Photos + 30 Second Video</h3>
+                        <p class="menu-price">$399</p>
+                        <p>Listing photos plus a short edited video for social, MLS links, or web use.</p>
+                    </article>
+                    <article class="price-menu-card">
+                        <span class="price-kicker">Fuller listing</span>
+                        <h3>Premium Listing Package</h3>
+                        <p class="menu-price">$599</p>
+                        <p>For properties that need more complete coverage and stronger presentation.</p>
+                    </article>
                 </div>
+            </div>
 
+            <div class="pricing-category">
+                <div class="pricing-category-header">
+                    <div>
+                        <h2>Business, Construction, and Capture-Only Work</h2>
+                        <p>Separate pricing for edited business content, recurring job-site updates, and raw footage.</p>
+                    </div>
+                    <a href="/services" class="service-link">Compare services →</a>
+                </div>
+                <div class="price-menu-grid compact">
+                    <article class="price-menu-card">
+                        <span class="price-kicker">Edited social</span>
+                        <h3>Business Social Media Video</h3>
+                        <p class="menu-price">$399</p>
+                        <p>Short video for local businesses, storefronts, venues, and social content.</p>
+                    </article>
+                    <article class="price-menu-card">
+                        <span class="price-kicker">Recurring updates</span>
+                        <h3>Monthly Construction Updates</h3>
+                        <p class="menu-price">$249/mo</p>
+                        <p>Scheduled aerial progress documentation for active construction projects.</p>
+                    </article>
+                    <article class="price-menu-card">
+                        <span class="price-kicker">Capture only</span>
+                        <h3>Raw Drone Footage</h3>
+                        <p class="menu-price">$299</p>
+                        <p>Clean aerial clips delivered for your editor, agency, or internal team.</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <p><strong>Final price depends on scope.</strong> Property size, travel, airspace, shot count, editing,
+                    and turnaround can change the quote. I will explain that before anything is booked.</p>
+            </div>
+
+            <div class="pricing-cta-row">
+                <a href="/contact" class="btn btn-primary">Ask for a Quote</a>
+                <a href="/services" class="btn btn-secondary">View Services</a>
             </div>
         </div>
     </section>
@@ -405,7 +194,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="pricing-calculator.js"></script>
 </body>
 
 </html>
