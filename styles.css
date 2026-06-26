@@ -1402,10 +1402,7 @@ ul {
 }
 
 .selector-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
-    gap: 2rem;
-    align-items: end;
+    max-width: 760px;
     padding: 2rem;
     margin-bottom: 1.25rem;
     background: rgba(22, 29, 34, 0.74);
@@ -1423,24 +1420,6 @@ ul {
 .selector-panel p {
     color: var(--text-secondary);
     max-width: 700px;
-}
-
-.service-jump-label {
-    display: block;
-    color: var(--text-primary);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.service-jump {
-    width: 100%;
-    min-height: 52px;
-    padding: 0 1rem;
-    border: 1px solid rgba(247, 243, 234, 0.18);
-    border-radius: 8px;
-    background: var(--bg-darker);
-    color: var(--text-primary);
-    font: inherit;
 }
 
 .service-choice-grid {
