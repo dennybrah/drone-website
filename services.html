@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260625-pricing-fix">
+    <link rel="stylesheet" href="styles.css?v=20260626-services-flow">
     <link rel="canonical" href="https://lvlogicmedia.com/services">
 </head>
 
@@ -38,7 +38,17 @@
                 </button>
                 <ul class="nav-menu">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/services" class="active">Services</a></li>
+                    <li class="nav-dropdown">
+                        <a href="/services" class="active nav-dropdown-toggle">Services</a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/real-estate-photography-las-vegas">Real Estate Photography</a></li>
+                            <li><a href="/commercial-real-estate-photography-las-vegas">Commercial Real Estate</a></li>
+                            <li><a href="/drone-photography-las-vegas">Drone Photography</a></li>
+                            <li><a href="/business-video-las-vegas">Business Video</a></li>
+                            <li><a href="/construction-progress-drone-services-las-vegas">Construction Updates</a></li>
+                            <li><a href="/raw-drone-footage-las-vegas">Raw Drone Footage</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/pricing">Pricing</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
@@ -54,155 +64,74 @@
         </div>
     </section>
 
-    <section class="service-pricing">
+    <section class="service-selector">
         <div class="container">
-            <h2 class="section-title">Starting Prices by Service</h2>
-            <div class="price-menu-grid">
-                <article class="price-menu-card">
-                    <span class="price-kicker">Real estate</span>
-                    <h3>Photo Package</h3>
-                    <p class="menu-price">$249</p>
-                    <p>Ground listing photography for residential properties.</p>
-                </article>
-                <article class="price-menu-card">
-                    <span class="price-kicker">Drone stills</span>
-                    <h3>Aerial Photos</h3>
-                    <p class="menu-price">$199</p>
-                    <p>Aerial photos for listings, land, businesses, and property context.</p>
-                </article>
-                <article class="price-menu-card featured">
-                    <span class="price-kicker">Photo + video</span>
-                    <h3>Photos + 30 Second Video</h3>
-                    <p class="menu-price">$399</p>
-                    <p>Listing photos plus a short edited video.</p>
-                </article>
-                <article class="price-menu-card">
-                    <span class="price-kicker">Business</span>
-                    <h3>Social Media Video</h3>
-                    <p class="menu-price">$399</p>
-                    <p>Short edited video for a local business, venue, or storefront.</p>
-                </article>
-                <article class="price-menu-card">
-                    <span class="price-kicker">Construction</span>
-                    <h3>Monthly Updates</h3>
-                    <p class="menu-price">$249/mo</p>
-                    <p>Recurring aerial progress documentation.</p>
-                </article>
-                <article class="price-menu-card">
-                    <span class="price-kicker">Capture only</span>
+            <div class="selector-panel">
+                <div>
+                    <p class="eyebrow">Find your service</p>
+                    <h2>Start with the type of project.</h2>
+                    <p>Pick the closest fit below. Each service page keeps the details focused so this page stays easy
+                        to scan.</p>
+                </div>
+                <label class="service-jump-label" for="service-jump">Jump to a service</label>
+                <select class="service-jump" id="service-jump" aria-label="Jump to a service"
+                    onchange="if (this.value) window.location.href = this.value;">
+                    <option value="">Select a service</option>
+                    <option value="/real-estate-photography-las-vegas">Real Estate Photography</option>
+                    <option value="/commercial-real-estate-photography-las-vegas">Commercial Real Estate Media</option>
+                    <option value="/drone-photography-las-vegas">Drone Photography</option>
+                    <option value="/business-video-las-vegas">Business Video</option>
+                    <option value="/construction-progress-drone-services-las-vegas">Construction Progress Updates</option>
+                    <option value="/raw-drone-footage-las-vegas">Raw Drone Footage</option>
+                </select>
+            </div>
+
+            <div class="service-choice-grid">
+                <a href="/real-estate-photography-las-vegas" class="service-choice-card">
+                    <span>Residential listings</span>
+                    <h3>Real Estate Photography</h3>
+                    <p>Interior, exterior, aerial add-ons, and short listing media for Las Vegas homes.</p>
+                </a>
+                <a href="/commercial-real-estate-photography-las-vegas" class="service-choice-card">
+                    <span>Commercial properties</span>
+                    <h3>Commercial Real Estate Media</h3>
+                    <p>Photos, aerials, and short video for retail, office, land, multifamily, and investment property.
+                    </p>
+                </a>
+                <a href="/drone-photography-las-vegas" class="service-choice-card">
+                    <span>Aerial stills</span>
+                    <h3>Drone Photography</h3>
+                    <p>Context, views, land, lots, rooflines, exteriors, and neighborhood angles.</p>
+                </a>
+                <a href="/business-video-las-vegas" class="service-choice-card">
+                    <span>Marketing content</span>
+                    <h3>Business Video</h3>
+                    <p>Drone and ground video for storefronts, venues, social media, and local brand promotion.</p>
+                </a>
+                <a href="/construction-progress-drone-services-las-vegas" class="service-choice-card">
+                    <span>Recurring updates</span>
+                    <h3>Construction Progress</h3>
+                    <p>Consistent aerial documentation for builders, owners, contractors, and project teams.</p>
+                </a>
+                <a href="/raw-drone-footage-las-vegas" class="service-choice-card">
+                    <span>Capture only</span>
                     <h3>Raw Drone Footage</h3>
-                    <p class="menu-price">$299</p>
-                    <p>Aerial clips for your editor, agency, or team.</p>
-                </article>
+                    <p>Unedited aerial clips for your editor, agency, internal team, or later marketing use.</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Detail Section -->
-    <section class="services-detail">
+    <section class="service-fit">
         <div class="container">
-            <!-- Real Estate Photography/Videography -->
-            <div class="service-detail" id="real-estate">
-                <div class="service-detail-content">
-                    <div class="service-detail-text">
-                        <h2>Real Estate Media</h2>
-                        <p class="service-intro">Interior, exterior, and aerial coverage for residential and commercial
-                            listings in Las Vegas.</p>
-                        <h3>Common Uses</h3>
-                        <ul class="service-list">
-                            <li>Real estate listings</li>
-                            <li>Interior photography/video</li>
-                            <li>Exterior aerial shots</li>
-                            <li>Commercial properties</li>
-                            <li>Virtual tours</li>
-                            <li>Property showcases</li>
-                        </ul>
-                        <div class="service-buttons">
-                            <a href="/real-estate-photography-las-vegas" class="btn btn-primary">Residential Details</a>
-                            <a href="/commercial-real-estate-photography-las-vegas" class="btn btn-secondary">Commercial Details</a>
-                        </div>
-                    </div>
-                    <div class="service-detail-image" id="real-estate-random-img"
-                        style="background: url('images/property 1/1.jpg') center/cover no-repeat;"></div>
+            <div class="fit-panel">
+                <div>
+                    <p class="eyebrow">Not sure where to start?</p>
+                    <h2>Send the address, goal, and deadline.</h2>
                 </div>
-
-                <!-- Real Estate Gallery & Video Supplement -->
-                <div class="real-estate-showcase">
-                    <div class="showcase-section">
-                        <h3>Property Gallery</h3>
-                        <div id="service-gallery-prop1" class="gallery-container"></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Video Production -->
-            <div class="service-detail" id="video-production">
-                <div class="service-detail-content reverse">
-                    <div class="service-detail-text">
-                        <h2>Business Video</h2>
-                        <p class="service-intro">Short video and drone footage for businesses, agencies, and teams that
-                            need useful marketing content without a large production.</p>
-                        <h3>Common Uses</h3>
-                        <ul class="service-list">
-                            <li>Business social media videos</li>
-                            <li>Storefront and location promos</li>
-                            <li>Website hero videos</li>
-                            <li>Vertical reels and short-form edits</li>
-                            <li>Agency support footage</li>
-                            <li>Local brand storytelling</li>
-                        </ul>
-                        <a href="/business-video-las-vegas" class="btn btn-primary">Business Video Details</a>
-                    </div>
-                    <div class="service-detail-image"
-                        style="background: url('images/red-rock.jpg') center/cover no-repeat;"></div>
-                </div>
-            </div>
-
-            <!-- Construction Progress -->
-            <div class="service-detail" id="construction-progress">
-                <div class="service-detail-content">
-                    <div class="service-detail-text">
-                        <h2>Construction Progress Updates</h2>
-                        <p class="service-intro">Recurring aerial photos and clips for builders, contractors, owners,
-                            and project teams that need clear month-to-month documentation.</p>
-                        <h3>Common Uses</h3>
-                        <ul class="service-list">
-                            <li>Construction progress updates</li>
-                            <li>Monthly job site documentation</li>
-                            <li>Owner and investor updates</li>
-                            <li>Before, during, and after records</li>
-                            <li>Marketing progress for active developments</li>
-                            <li>Contractor reporting support</li>
-                        </ul>
-                        <a href="/construction-progress-drone-services-las-vegas" class="btn btn-primary">Construction Details</a>
-                    </div>
-                    <div class="service-detail-image"
-                        style="background: url('images/hero-banner.jpg') center/cover no-repeat;"></div>
-                </div>
-            </div>
-
-            <!-- Raw Footage -->
-            <div class="service-detail" id="raw-footage">
-                <div class="service-detail-content reverse">
-                    <div class="service-detail-text">
-                        <h2>Raw Drone Footage</h2>
-                        <p class="service-intro">Capture-only aerial footage for editors, agencies, businesses, and
-                            production teams that do not need a finished edit from me.</p>
-                        <h3>Common Uses</h3>
-                        <ul class="service-list">
-                            <li>Agency and editor support</li>
-                            <li>Business location clips</li>
-                            <li>Commercial property footage</li>
-                            <li>Supplemental b-roll</li>
-                            <li>Project documentation clips</li>
-                            <li>Raw aerial footage for later editing</li>
-                        </ul>
-                        <a href="/raw-drone-footage-las-vegas" class="btn btn-primary">Raw Footage Details</a>
-                    </div>
-                    <div class="service-detail-image"
-                        style="background: url('images/aerial-photography.jpg') center/cover no-repeat;"></div>
-                </div>
+                <p>I will point you to the service page that fits best, whether it is listing photos, aerial coverage,
+                    business video, monthly construction updates, or raw footage for your editor.</p>
+                <a href="/contact" class="btn btn-secondary">Ask About a Project</a>
             </div>
         </div>
     </section>
@@ -298,24 +227,7 @@
             </div>
         </div>
     </footer>
-
-
-
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Property 1 Images for Services Page
-            const prop1Images = Array.from({ length: 19 }, (_, i) => `${i + 1}.jpg`);
-            new Gallery('service-gallery-prop1', 'images/property 1', prop1Images);
-
-            // Randomize Real Estate Section Image
-            const randomImg = document.getElementById('real-estate-random-img');
-            if (randomImg) {
-                const rand = Math.floor(Math.random() * 19) + 1;
-                randomImg.style.backgroundImage = `url('images/property 1/${rand}.jpg')`;
-            }
-        });
-    </script>
 </body>
 
 </html>
