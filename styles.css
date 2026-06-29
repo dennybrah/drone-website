@@ -1856,7 +1856,8 @@ ul {
 
 .standalone-photo {
     position: relative;
-    min-height: 250px;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid rgba(247, 243, 234, 0.08);
@@ -1864,7 +1865,7 @@ ul {
 }
 
 .standalone-photo.wide {
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 .standalone-photo img {
