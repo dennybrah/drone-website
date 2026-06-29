@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260629-portfolio-standalone">
+    <link rel="stylesheet" href="styles.css?v=20260629-portfolio-lightbox">
     <link rel="canonical" href="https://lvlogicmedia.com/portfolio">
 </head>
 
@@ -39,8 +39,21 @@
         </header>
 
         <section class="standalone-feature">
-            <img src="images/portfolio/via-lombardi-aerial-sunset.jpg"
-                alt="Las Vegas aerial sunset over homes and golf course">
+            <button class="portfolio-lightbox-trigger" type="button">
+                <img src="images/portfolio/via-lombardi-aerial-sunset.jpg"
+                    alt="Las Vegas aerial sunset over homes and golf course">
+            </button>
+        </section>
+
+        <section class="standalone-about">
+            <img src="images/pilot.png" alt="Denny from Las Vegas Logic Media" loading="lazy">
+            <div>
+                <p class="portfolio-mini-kicker">Behind the camera</p>
+                <h2>Denny, Las Vegas Logic Media</h2>
+                <p>I shoot ground photos, aerials, video, and portrait work in Las Vegas. I like clean compositions,
+                    useful coverage, and edits that feel polished without feeling overdone.</p>
+                <p class="standalone-contact">www.lvlogicmedia.com · @lvlogicmedia</p>
+            </div>
         </section>
 
         <section class="standalone-section">
@@ -68,64 +81,111 @@
             </div>
             <div class="standalone-photo-grid">
                 <figure class="standalone-photo wide">
-                    <img src="images/portfolio/share-downtown-exterior.jpg"
-                        alt="Aerial commercial property photo in downtown Las Vegas" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/share-downtown-exterior.jpg"
+                            alt="Aerial commercial property photo in downtown Las Vegas" loading="lazy">
+                    </button>
                     <figcaption>Commercial property</figcaption>
                 </figure>
                 <figure class="standalone-photo">
-                    <img src="images/portfolio/via-salaria-kitchen.jpg"
-                        alt="Bright real estate kitchen and living area photography" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/via-salaria-kitchen.jpg"
+                            alt="Bright real estate kitchen and living area photography" loading="lazy">
+                    </button>
                     <figcaption>Residential interior</figcaption>
                 </figure>
                 <figure class="standalone-photo">
-                    <img src="images/portfolio/bramante-kitchen.jpg" alt="Modern kitchen real estate photography"
-                        loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/bramante-kitchen.jpg" alt="Modern kitchen real estate photography"
+                            loading="lazy">
+                    </button>
                     <figcaption>Listing detail</figcaption>
                 </figure>
                 <figure class="standalone-photo">
-                    <img src="images/portfolio/las-vegas-skyline-aerial.jpg"
-                        alt="Las Vegas skyline aerial at sunset" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/las-vegas-skyline-aerial.jpg"
+                            alt="Las Vegas skyline aerial at sunset" loading="lazy">
+                    </button>
                     <figcaption>Las Vegas skyline</figcaption>
                 </figure>
                 <figure class="standalone-photo">
-                    <img src="images/portfolio/sandra-drive-topdown-aerial.jpg"
-                        alt="Top-down aerial photo of homes near a golf course" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/sandra-drive-topdown-aerial.jpg"
+                            alt="Top-down aerial photo of homes near a golf course" loading="lazy">
+                    </button>
                     <figcaption>Top-down aerial</figcaption>
                 </figure>
                 <figure class="standalone-photo wide">
-                    <img src="images/portfolio/sandra-drive-golf-aerial.jpg"
-                        alt="Golden hour aerial photo over Las Vegas golf course homes" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/sandra-drive-golf-aerial.jpg"
+                            alt="Golden hour aerial photo over Las Vegas golf course homes" loading="lazy">
+                    </button>
                     <figcaption>Golf course view</figcaption>
                 </figure>
                 <figure class="standalone-photo">
-                    <img src="images/portfolio/red-rock-bridal-portrait.jpg"
-                        alt="Bridal portrait at Red Rock Canyon" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/red-rock-bridal-portrait.jpg"
+                            alt="Bridal portrait at Red Rock Canyon" loading="lazy">
+                    </button>
                     <figcaption>Red Rock portrait</figcaption>
                 </figure>
                 <figure class="standalone-photo">
-                    <img src="images/portfolio/red-rock-couple-portrait.jpg"
-                        alt="Couple portrait at Red Rock Canyon" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/red-rock-couple-portrait.jpg"
+                            alt="Couple portrait at Red Rock Canyon" loading="lazy">
+                    </button>
                     <figcaption>Couple portrait</figcaption>
                 </figure>
                 <figure class="standalone-photo">
-                    <img src="images/portfolio/red-rock-bridal-candid.jpg"
-                        alt="Candid bridal portrait at Red Rock Canyon" loading="lazy">
+                    <button class="portfolio-lightbox-trigger" type="button">
+                        <img src="images/portfolio/red-rock-bridal-candid.jpg"
+                            alt="Candid bridal portrait at Red Rock Canyon" loading="lazy">
+                    </button>
                     <figcaption>Natural light portrait</figcaption>
                 </figure>
             </div>
         </section>
 
-        <section class="standalone-about">
-            <img src="images/pilot.png" alt="Denny from Las Vegas Logic Media" loading="lazy">
-            <div>
-                <p class="portfolio-mini-kicker">Behind the camera</p>
-                <h2>Denny, Las Vegas Logic Media</h2>
-                <p>I shoot ground photos, aerials, video, and portrait work in Las Vegas. I like clean compositions,
-                    useful coverage, and edits that feel polished without feeling overdone.</p>
-                <p class="standalone-contact">www.lvlogicmedia.com · @lvlogicmedia</p>
-            </div>
-        </section>
+        <div class="portfolio-lightbox" id="portfolioLightbox" aria-hidden="true">
+            <button class="portfolio-lightbox-close" type="button" aria-label="Close enlarged photo">Close</button>
+            <img src="" alt="">
+        </div>
     </main>
+    <script>
+        const portfolioLightbox = document.getElementById('portfolioLightbox');
+        const portfolioLightboxImage = portfolioLightbox.querySelector('img');
+        const portfolioLightboxClose = portfolioLightbox.querySelector('button');
+
+        document.querySelectorAll('.portfolio-lightbox-trigger').forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                const image = trigger.querySelector('img');
+                portfolioLightboxImage.src = image.currentSrc || image.src;
+                portfolioLightboxImage.alt = image.alt;
+                portfolioLightbox.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('portfolio-lightbox-open');
+                portfolioLightboxClose.focus();
+            });
+        });
+
+        function closePortfolioLightbox() {
+            portfolioLightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('portfolio-lightbox-open');
+            portfolioLightboxImage.src = '';
+            portfolioLightboxImage.alt = '';
+        }
+
+        portfolioLightboxClose.addEventListener('click', closePortfolioLightbox);
+        portfolioLightbox.addEventListener('click', (event) => {
+            if (event.target === portfolioLightbox) {
+                closePortfolioLightbox();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && portfolioLightbox.getAttribute('aria-hidden') === 'false') {
+                closePortfolioLightbox();
+            }
+        });
+    </script>
 </body>
 
 </html>

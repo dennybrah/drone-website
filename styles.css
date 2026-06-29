@@ -1873,6 +1873,21 @@ ul {
     object-fit: cover;
 }
 
+.portfolio-lightbox-trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.portfolio-lightbox-trigger:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -4px;
+}
+
 .standalone-photo figcaption {
     position: absolute;
     left: 0.75rem;
@@ -1911,6 +1926,48 @@ ul {
 .standalone-contact {
     color: var(--text-primary) !important;
     font-weight: 600;
+}
+
+.portfolio-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 4.5rem 1.25rem 1.25rem;
+    background: rgba(5, 7, 8, 0.92);
+}
+
+.portfolio-lightbox[aria-hidden="false"] {
+    display: flex;
+}
+
+.portfolio-lightbox img {
+    width: auto;
+    max-width: min(1180px, 100%);
+    max-height: calc(100vh - 6rem);
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+.portfolio-lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    min-height: 40px;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid rgba(247, 243, 234, 0.18);
+    border-radius: 8px;
+    background: rgba(13, 18, 22, 0.92);
+    color: var(--text-primary);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.portfolio-lightbox-open {
+    overflow: hidden;
 }
 
 /* ===================================
