@@ -25,6 +25,11 @@
   status = 200
 
 [[redirects]]
+  from = "/portfolio"
+  to = "/portfolio.html"
+  status = 200
+
+[[redirects]]
   from = "/pricing"
   to = "/pricing.html"
   status = 200
@@ -32,6 +37,36 @@
 [[redirects]]
   from = "/contact"
   to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/real-estate-photography-las-vegas"
+  to = "/real-estate-photography-las-vegas.html"
+  status = 200
+
+[[redirects]]
+  from = "/commercial-real-estate-photography-las-vegas"
+  to = "/commercial-real-estate-photography-las-vegas.html"
+  status = 200
+
+[[redirects]]
+  from = "/business-video-las-vegas"
+  to = "/business-video-las-vegas.html"
+  status = 200
+
+[[redirects]]
+  from = "/drone-photography-las-vegas"
+  to = "/drone-photography-las-vegas.html"
+  status = 200
+
+[[redirects]]
+  from = "/construction-progress-drone-services-las-vegas"
+  to = "/construction-progress-drone-services-las-vegas.html"
+  status = 200
+
+[[redirects]]
+  from = "/raw-drone-footage-las-vegas"
+  to = "/raw-drone-footage-las-vegas.html"
   status = 200
 
 # Headers for security and performance
