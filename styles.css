@@ -230,7 +230,7 @@ ul {
    =================================== */
 .hero {
     position: relative;
-    min-height: 590px;
+    min-height: 520px;
     display: flex;
     align-items: center;
     background: url('images/hero-banner.jpg') center/cover no-repeat;
@@ -1227,6 +1227,14 @@ ul {
     color: var(--text-primary);
     font-size: 1rem;
     margin: 0;
+}
+
+.pricing-note-section {
+    padding: 3rem 0 0;
+}
+
+.pricing-note-section .pricing-note {
+    margin-top: 0;
 }
 
 .simple-pricing-grid {

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (variant === 'B') {
         const heroCTA = document.querySelector('.hero-buttons .btn-primary');
         if (heroCTA) {
-            heroCTA.textContent = 'Book Your Shoot Today →'; // Variant B
+            heroCTA.textContent = 'Request a Quote'; // Variant B
             // Variant A keeps "Get a Free Quote Today →"
         }
     }
